@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-
+  lang = [
+    { name: "HTML" },
+    { name: "ReactJS" },
+    { name: "Angular" },
+    { name: "Bootstrap" },
+    { name: "PrimeNG" },
+  ];
   constructor() { }
 
   ngOnInit(): void {

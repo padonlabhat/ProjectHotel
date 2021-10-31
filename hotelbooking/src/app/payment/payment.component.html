@@ -1,1 +1,19 @@
 <p>payment works!</p>
+<p-fileUpload name="myfile[]" url="./upload.php" 
+        accept="image/*" [auto]="true"></p-fileUpload>
+
+
+<div class="card">
+        <label for="time">วันที่และเวลาที่โอนเงินตามหลักฐานการชำระเงิน</label>
+        <p-calendar  [showTime]="true" inputId="time"></p-calendar>
+</div>
+
+<div class="p-d-flex">Flex Container</div>
+
+
+<h6> โอนจากธนาคาร</h6>
+<p-dropdown [options]="lang" placeholder="Select a Bank"
+ optionLabel="name" [showClear]="true" 
+ class="ng-invalid ng-dirty">
+</p-dropdown>
+<button pButton pRipple type="button" label="Secondary" class="p-button-raised p-button-secondary"></button>
