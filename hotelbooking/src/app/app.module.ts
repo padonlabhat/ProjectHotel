@@ -31,12 +31,8 @@ import {HttpClientModule} from '@angular/common/http';//g4
     LoginComponent,
     CancelbookingComponent,
     BookingComponent,
-<<<<<<< Updated upstream
-    SearchComponent
-=======
+    SearchComponent,
     PaymentComponent
-  
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
