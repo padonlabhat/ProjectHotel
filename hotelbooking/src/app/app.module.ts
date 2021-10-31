@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,8 +12,9 @@ import { BookingComponent } from './booking/booking.component';
 import { SearchComponent } from './search/search.component';
 
 
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+   
 
-//ของเกมอย่ายุ่ง
 import {CalendarModule} from 'primeng/calendar';//g1 caledar and time
 
 import {DropdownModule} from 'primeng/dropdown';//g2 dropdown
@@ -21,7 +23,15 @@ import {ButtonModule} from 'primeng/button';//g3 button
 
 import {FileUploadModule} from 'primeng/fileupload';//g4 uploand
 import {HttpClientModule} from '@angular/common/http';//g4
-//สิ้นสุดของเกม
+
+
+
+
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -41,9 +51,15 @@ import {HttpClientModule} from '@angular/common/http';//g4
     DropdownModule,
     ButtonModule,
     FileUploadModule,
-    HttpClientModule
+    HttpClientModule,
+    AccordionModule,
+    BrowserAnimationsModule
+   
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
