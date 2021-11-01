@@ -1,1 +1,10 @@
-<p>login works!</p>
+<form [formGroup]="form">
+    <div class="form-group">
+        <div class="row-sm-12 row-md-12 row-lg-6">
+            <input type="text" class="form-control" placeholder="Username or E-mail" formControlName="username">
+        </div>
+        <div class="row-sm-12 row-md-12 row-lg-6">
+            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+        </div>
+    </div>
+</form>
