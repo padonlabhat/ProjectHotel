@@ -1,9 +1,49 @@
 
-<div class="container">
-  <p-fileUpload name="myfile[]" url="./upload.php" 
-        accept="image/*" [auto]="true"></p-fileUpload>
+<div class="container pt-4">
+ <h2>ขั้นตอนการชำระเงิน</h2> 
 </div>
-<div class="container">
-<label for="time">วันที่และเวลาที่โอนเงินตามหลักฐานการชำระเงิน</label>
-        <p-calendar  [showTime]="true" inputId="time"></p-calendar>
+
+<div class="container pt-3">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="img/staffs/staff1.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">รูปภาพ</h4>
+                     
+                    </div>
+                </div>
+            </div>
+            
 </div>
+<div class="container pt-2">
+         <div class="row">
+                <div class="col">
+                <h6>อัปโหลดสลีปโอนเงิน</h6>
+                <p-fileUpload name="myfile[]" url="./upload.php" accept="image/*" [auto]="true"></p-fileUpload>
+                </div>
+        </div>
+        <div class="row pt-2">
+                <div class="col">
+                <h6>วันที่ที่โอนเงินตามหลักฐานการชำระเงิน</h6>
+                <p-calendar  [showIcon]="true" inputId="icon"></p-calendar>
+                </div>
+                <div class="col">
+                <h6>เวลาที่โอนเงินตามหลักฐานการชำระเงิน</h6>
+                <p-calendar [timeOnly]="true"  inputId="timeonly"></p-calendar>
+                </div>
+                <div class="col">
+                        <h6>โอนจากธนาคาร</h6>
+                        <p-dropdown [options]="payform" placeholder="Select a Bank" optionLabel="name" [showClear]="true"></p-dropdown>
+                        
+                </div>
+                <div class="col">
+                        <h6>โอนไปยังธนาคาร</h6>
+                        <p-dropdown [options]="payto" placeholder="Select a Bank" optionLabel="name" [showClear]="true" ></p-dropdown>
+                </div>
+        </div>
+         <div class="row pt-3">
+        <button pButton pRipple type="button" label="Success" class="p-button-rounded p-button-success"></button>
+        </div>
+</div>
+

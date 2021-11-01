@@ -6,7 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-  lang = [
+  payform = [
+    { name: "HTML" },
+    { name: "ReactJS" },
+    { name: "Angular" },
+    { name: "Bootstrap" },
+    { name: "PrimeNG" },
+  ];
+  payto = [
     { name: "HTML" },
     { name: "ReactJS" },
     { name: "Angular" },
