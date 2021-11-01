@@ -4,7 +4,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SimplePageComponent } from './simple-page/simple-page.component';
 import { PaymentComponent } from './payment/payment.component';
 import { LoginComponent } from './login/login.component';
 import { CancelbookingComponent } from './cancelbooking/cancelbooking.component';
@@ -13,23 +12,13 @@ import { SearchComponent } from './search/search.component';
 
 
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
-   
-
 import {CalendarModule} from 'primeng/calendar';//g1 caledar and time
-
 import {DropdownModule} from 'primeng/dropdown';//g2 dropdown
-
 import {ButtonModule} from 'primeng/button';//g3 button
-
 import {FileUploadModule} from 'primeng/fileupload';//g4 uploand
 import {HttpClientModule} from '@angular/common/http';
 import { HotelComponent } from './hotel/hotel.component';//g4
-
-
-
-
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -37,7 +26,6 @@ import { HotelComponent } from './hotel/hotel.component';//g4
 @NgModule({
   declarations: [
     AppComponent,
-    SimplePageComponent,
     PaymentComponent,
     LoginComponent,
     CancelbookingComponent,
@@ -55,10 +43,9 @@ import { HotelComponent } from './hotel/hotel.component';//g4
     FileUploadModule,
     HttpClientModule,
     AccordionModule,
-    BrowserAnimationsModule
-   
-    
-
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
