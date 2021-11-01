@@ -22,7 +22,8 @@ import {DropdownModule} from 'primeng/dropdown';//g2 dropdown
 import {ButtonModule} from 'primeng/button';//g3 button
 
 import {FileUploadModule} from 'primeng/fileupload';//g4 uploand
-import {HttpClientModule} from '@angular/common/http';//g4
+import {HttpClientModule} from '@angular/common/http';
+import { HotelComponent } from './hotel/hotel.component';//g4
 
 
 
@@ -42,7 +43,8 @@ import {HttpClientModule} from '@angular/common/http';//g4
     CancelbookingComponent,
     BookingComponent,
     SearchComponent,
-    PaymentComponent
+    PaymentComponent,
+    HotelComponent
   ],
   imports: [
     BrowserModule,
