@@ -116,9 +116,6 @@
                 </div>
             </div>
     
-
-
-
         <div class="row footer p-5">
             <div class="col-12">
                 <h2 class="text-center">
@@ -127,7 +124,27 @@
                 <img src="assets/img/payment.png" class="img-fluid  rounded" />
             </div>
         </div>
-        <div class="row pt-1">
-                <button pButton pRipple type="button" label="Confirm" class="p-button-rounded p-button-success"></button>
+        <div class="row pt-3">
+            <button pButton pRipple type="button" label="Confirm" class="p-button-rounded p-button-success" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+                <!-- <a pButton pRipple type="button" label="Confirm" href="payment"></a> -->
+                <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">ชำระเงิน</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                            โปรดเลือกประเภทการชำระเงิน
+                    </div>
+                    <div class="modal-footer">
+                            <a type="button" class="btn btn-secondary" href="#">ชำระเงินภายหลัง</a>
+                            <a type="button" class="btn btn-primary" href="payment" >ชำระเงินเลย</a>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
         </div>
     </div> 
+    

@@ -3,9 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { BookingComponent } from './booking/booking.component';
 import { CancelbookingComponent } from './cancelbooking/cancelbooking.component';
 import { LoginComponent } from './login/login.component';
-
 import { PaymentComponent } from './payment/payment.component';
 import { SearchComponent } from './search/search.component';
+import { ReceiptComponent } from './receipt/receipt.component';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'payment', component: PaymentComponent},
   { path: 'booking', component: BookingComponent},
   { path: 'search', component: SearchComponent},
+  { path: 'receipt', component: ReceiptComponent},
 ];
 
 @NgModule({

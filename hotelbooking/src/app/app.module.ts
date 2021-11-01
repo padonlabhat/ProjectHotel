@@ -19,6 +19,7 @@ import {FileUploadModule} from 'primeng/fileupload';//g4 uploand
 import {HttpClientModule} from '@angular/common/http';
 import { HotelComponent } from './hotel/hotel.component';//g4
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReceiptComponent } from './receipt/receipt.component';
 
 
 
@@ -32,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BookingComponent,
     SearchComponent,
     PaymentComponent,
-    HotelComponent
+    HotelComponent,
+    ReceiptComponent
   ],
   imports: [
     BrowserModule,
