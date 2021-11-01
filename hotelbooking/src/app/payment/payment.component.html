@@ -39,7 +39,8 @@
                         <p-dropdown [options]="payto" placeholder="Select a Bank" optionLabel="name" [showClear]="true" ></p-dropdown>
                 </div>
         </div>
-         <div class="row pt-3">
+
+         <div class="row pt-3"> //
         <button pButton pRipple type="button" label="Success" class="p-button-rounded p-button-success" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
                
                 <!-- Modal -->
@@ -51,11 +52,11 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                        เมื่อยืนยันการชำระเงินแล้วจะไม่สามารถแก้ไขข้อมูลได้
+                        เมื่อยืนยันการชำระเงินแล้วจะไม่สามารถยกเลิกการจองได้
                 </div>
                 <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                        <button type="button" class="btn btn-primary">ตกลง</button>
+                        <a type="button" class="btn btn-primary" href="confirm-booking">ตกลง</a>
                 </div>
                 </div>
                 </div>
