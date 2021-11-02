@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { PaymentComponent } from './payment/payment.component';
 import { SearchComponent } from './search/search.component';
 import { ReceiptComponent } from './receipt/receipt.component';
+import { BookinghistoryComponent } from './bookinghistory/bookinghistory.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'booking', component: BookingComponent},
   { path: 'search', component: SearchComponent},
   { path: 'receipt', component: ReceiptComponent},
+  { path: 'bookinghistory', component: BookinghistoryComponent},
 ];
 
 @NgModule({

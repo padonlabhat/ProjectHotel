@@ -9,7 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { CancelbookingComponent } from './cancelbooking/cancelbooking.component';
 import { BookingComponent } from './booking/booking.component';
 import { SearchComponent } from './search/search.component';
-
+import { BookinghistoryComponent } from './bookinghistory/bookinghistory.component';
+import { ReceiptComponent } from './receipt/receipt.component';
 
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {CalendarModule} from 'primeng/calendar';//g1 caledar and time
@@ -19,7 +20,7 @@ import {FileUploadModule} from 'primeng/fileupload';//g4 uploand
 import {HttpClientModule} from '@angular/common/http';
 import { HotelComponent } from './hotel/hotel.component';//g4
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ReceiptComponent } from './receipt/receipt.component';
+import {OrderListModule} from 'primeng/orderlist';
 
 
 
@@ -34,7 +35,8 @@ import { ReceiptComponent } from './receipt/receipt.component';
     SearchComponent,
     PaymentComponent,
     HotelComponent,
-    ReceiptComponent
+    ReceiptComponent,
+    BookinghistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { ReceiptComponent } from './receipt/receipt.component';
     AccordionModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OrderListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
