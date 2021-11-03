@@ -8,7 +8,7 @@ import { SearchComponent } from './search/search.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { BookinghistoryComponent } from './bookinghistory/bookinghistory.component';
 import { HomeComponent } from './home/home.component';
-
+import { RoomdetailComponent } from './roomdetail/roomdetail.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'receipt', component: ReceiptComponent},
   { path: 'bookinghistory', component: BookinghistoryComponent},
   { path: 'home', component: HomeComponent},
+  { path: 'roomdetail', component: RoomdetailComponent}
 ];
 
 @NgModule({
