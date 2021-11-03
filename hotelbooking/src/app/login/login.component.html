@@ -1,10 +1,41 @@
-<form [formGroup]="form">
-    <div class="form-group">
-        <div class="row-sm-12 row-md-12 row-lg-6">
-            <input type="text" class="form-control" placeholder="Username or E-mail" formControlName="username">
-        </div>
-        <div class="row-sm-12 row-md-12 row-lg-6">
-            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+<div class="container py-5 my-5" align="center">
+    <div class="card" style="width: 300px;" align="left">
+        <div class="card-body">
+            <div class="row">
+                <h6>Log in</h6>
+            </div>
+            <form [formGroup]="form">
+                <div class="form-group">
+                    <div class="row py-1">
+                        <div class="col-1 py-1">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-11">
+                            <input type="text" class="form-control" placeholder="Username or E-mail"
+                                formControlName="username">
+                        </div>
+                    </div>
+                    <div class="row py-1">
+                        <div class="col-1 py-1">
+                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-11">
+                            <input type="password" class="form-control" placeholder="Password"
+                                formControlName="password">
+                        </div>
+                    </div>
+                    <div class="row py-1" align="center">
+                        <div class="col">
+                            <button pButton type="button" (click)="onLogin()" label="LOGIN"></button>
+                        </div>
+                    </div>
+                    <div class="row py-1" align="center">
+                        <div class="col">
+                            <a href="">or, Register</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-</form>
+</div>
