@@ -11,6 +11,8 @@ import { BookingComponent } from './booking/booking.component';
 import { SearchComponent } from './search/search.component';
 import { BookinghistoryComponent } from './bookinghistory/bookinghistory.component';
 import { ReceiptComponent } from './receipt/receipt.component';
+import { HotelComponent } from './hotel/hotel.component';//g4
+import { HomeComponent } from './home/home.component';
 
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {CalendarModule} from 'primeng/calendar';//g1 caledar and time
@@ -18,10 +20,8 @@ import {DropdownModule} from 'primeng/dropdown';//g2 dropdown
 import {ButtonModule} from 'primeng/button';//g3 button
 import {FileUploadModule} from 'primeng/fileupload';//g4 uploand
 import {HttpClientModule} from '@angular/common/http';
-import { HotelComponent } from './hotel/hotel.component';//g4
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {OrderListModule} from 'primeng/orderlist';
-import { HomeComponent } from './home/home.component';
 
 
 
@@ -52,7 +52,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    OrderListModule
+    OrderListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
