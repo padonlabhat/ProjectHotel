@@ -21,6 +21,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { HotelComponent } from './hotel/hotel.component';//g4
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {OrderListModule} from 'primeng/orderlist';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -36,7 +37,8 @@ import {OrderListModule} from 'primeng/orderlist';
     PaymentComponent,
     HotelComponent,
     ReceiptComponent,
-    BookinghistoryComponent
+    BookinghistoryComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
