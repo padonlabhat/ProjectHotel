@@ -6,34 +6,38 @@
             </div>
             <form [formGroup]="form">
                 <div class="form-group">
-                    <div class="row py-1">
+                    <div class="row py-2">
                         <div class="col-1 py-1">
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                         </div>
                         <div class="col-11">
-                            <input type="text" class="form-control" placeholder="Username or E-mail"
+                            <input type="text" class="form-control" placeholder="USERNAME OR E-MAIL"
                                 formControlName="username">
                         </div>
                     </div>
-                    <div class="row py-1">
+
+                    <div class="row py-2">
                         <div class="col-1 py-1">
                             <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                         </div>
                         <div class="col-11">
-                            <input type="password" class="form-control" placeholder="Password"
+                            <input type="password" class="form-control" placeholder="PASSWORD"
                                 formControlName="password">
                         </div>
                     </div>
-                    <div class="row py-1" align="center">
+
+                    <div class="row py-2" align="center">
                         <div class="col">
                             <button pButton type="button" (click)="onLogin()" label="LOGIN"></button>
                         </div>
                     </div>
-                    <div class="row py-1" align="center">
+
+                    <div class="row" align="center">
                         <div class="col">
-                            <a href="">or, Register</a>
+                            <a href="register">or, Register</a>
                         </div>
                     </div>
+
                 </div>
             </form>
         </div>

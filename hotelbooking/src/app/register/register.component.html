@@ -1,0 +1,65 @@
+<div class="container py-5 my-5" align="center">
+    <div class="card" style="width: 300px;" align="left">
+        <div class="card-body">
+            <div class="row">
+                <h6>Register</h6>
+            </div>
+            <form [formGroup]="form">
+                <div class="form-group">
+
+                    <div class="row py-2">
+                        <div class="col-6">
+                            <input type="text" class="form-control" placeholder="FIRSTNAME"
+                                formControlName="fname">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" placeholder="LASTNAME"
+                                formControlName="lname">
+                        </div>
+                    </div>
+
+                    <div class="row py-2">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="E-MAIL"
+                                formControlName="email">
+                        </div>
+                    </div>
+
+                    <div class="row py-2">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="USERNAME"
+                                formControlName="username">
+                        </div>
+                    </div>
+
+                    <div class="row py-2">
+                        <div class="col">
+                            <input type="password" class="form-control" placeholder="PASSWORD"
+                                formControlName="password">
+                        </div>
+                    </div>
+
+                    <div class="row py-2">
+                        <div class="col">
+                            <input type="password" class="form-control" placeholder="CONFIRM PASSWORD"
+                                formControlName="confpassword">
+                        </div>
+                    </div>
+
+                    <div class="row py-2" align="center">
+                        <div class="col">
+                            <button pButton type="button" (click)="onRegister()" label="REGISTER"></button>
+                        </div>
+                    </div>
+
+                    <div class="row" align="center">
+                        <div class="col">
+                            <a href="login">or, Login</a>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

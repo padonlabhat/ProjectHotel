@@ -9,9 +9,11 @@ import { ReceiptComponent } from './receipt/receipt.component';
 import { BookinghistoryComponent } from './bookinghistory/bookinghistory.component';
 import { HomeComponent } from './home/home.component';
 import { RoomdetailComponent } from './roomdetail/roomdetail.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
   { path: 'cancelbooking', component: CancelbookingComponent},
   { path: 'payment', component: PaymentComponent},
   { path: 'booking', component: BookingComponent},

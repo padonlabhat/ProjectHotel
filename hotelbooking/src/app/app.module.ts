@@ -22,6 +22,7 @@ import {FileUploadModule} from 'primeng/fileupload';//g4 uploand
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {OrderListModule} from 'primeng/orderlist';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -38,7 +39,8 @@ import {OrderListModule} from 'primeng/orderlist';
     HotelComponent,
     ReceiptComponent,
     BookinghistoryComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
