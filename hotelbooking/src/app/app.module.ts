@@ -21,11 +21,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { HotelComponent } from './hotel/hotel.component';//g4
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {OrderListModule} from 'primeng/orderlist';
-<<<<<<< Updated upstream
 import { HomeComponent } from './home/home.component';
-=======
-import { RoomdetailComponent } from './roomdetail/roomdetail.component';
->>>>>>> Stashed changes
 
 
 
@@ -42,11 +38,7 @@ import { RoomdetailComponent } from './roomdetail/roomdetail.component';
     HotelComponent,
     ReceiptComponent,
     BookinghistoryComponent,
-<<<<<<< Updated upstream
     HomeComponent
-=======
-    RoomdetailComponent
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
