@@ -1,6 +1,6 @@
-import { variable } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +9,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   form: any;
-  constructor(fb: FormBuilder) {
+  constructor(
+    fb: FormBuilder,
+    private router: Router
+    ) {
     this.form = fb.group({
       fname: fb.control('', Validators.required),
       lname: fb.control('', Validators.required),
@@ -35,5 +38,6 @@ export class RegisterComponent implements OnInit {
     // }else{
       
     // }
+    this.router.navigateByUrl('/login')
   }
 }
