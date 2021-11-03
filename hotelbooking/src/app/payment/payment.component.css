@@ -2,14 +2,14 @@ body {
     color: #000;
     overflow-x: hidden;
     height: 100%;
-    background-color: #EF5350;
+    background-color: #0d6efd;
     background-repeat: no-repeat
 }
 
 .card {
     padding: 30px 25px 35px 50px;
     border-radius: 30px;
-    box-shadow: 0px 4px 8px 0px #B71C1C;
+    box-shadow: 0px 4px 8px 0px #0d6efd;
     margin-top: 50px;
     margin-bottom: 50px
 }
@@ -61,7 +61,7 @@ input:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border-bottom: 1px solid #EF5350;
+    border-bottom: 1px solid #0d6efd;
     outline-width: 0
 }
 
@@ -73,7 +73,7 @@ button:focus {
 }
 
 .btn-red {
-    background-color: #EF5350;
+    background-color: #0d6efd;
     color: #fff;
     padding: 8px 25px;
     border-radius: 50px;
@@ -83,15 +83,15 @@ button:focus {
 }
 
 .btn-red:hover {
-    box-shadow: 0 0 0 2px #EF5350
+    box-shadow: 0 0 0 2px #0d6efd
 }
 
 .btn-red:focus {
-    box-shadow: 0 0 0 2px #EF5350 !important
+    box-shadow: 0 0 0 2px #0d6efd !important
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #EF5350
+    background-color: #0d6efd
 }
 
 @media screen and (max-width: 575px) {
