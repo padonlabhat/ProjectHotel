@@ -1,5 +1,5 @@
-<div class="container py-5 my-5" align="center">
-    <div class="card" style="width: 300px;" align="left">
+<div class="container pt-5" align="center" style="background-image: url('../../assets/img/login.jpg'); width: 1600px; height: 900px;">
+    <div class="card py-3 my-5" style="width: 500px;" align="left">
         <div class="card-body">
             <div class="row">
                 <h6>Register</h6>
@@ -7,7 +7,7 @@
             <form [formGroup]="form">
                 <div class="form-group">
 
-                    <div class="row py-2">
+                    <div class="row py-2 px-2">
                         <div class="col-6">
                             <input type="text" class="form-control" placeholder="FIRSTNAME"
                                 formControlName="fname">
@@ -17,36 +17,36 @@
                                 formControlName="lname">
                         </div>
                     </div>
-
-                    <div class="row py-2">
+                    <br>
+                    <div class="row py-2 px-2">
                         <div class="col">
                             <input type="text" class="form-control" placeholder="E-MAIL"
                                 formControlName="email">
                         </div>
                     </div>
-
-                    <div class="row py-2">
+                    <br>
+                    <div class="row py-2 px-2">
                         <div class="col">
                             <input type="text" class="form-control" placeholder="USERNAME"
                                 formControlName="username">
                         </div>
                     </div>
-
-                    <div class="row py-2">
+                    <br>
+                    <div class="row py-2 px-2">
                         <div class="col">
                             <input type="password" class="form-control" placeholder="PASSWORD"
                                 formControlName="password">
                         </div>
                     </div>
-
-                    <div class="row py-2">
+                    <br>
+                    <div class="row py-2 px-2">
                         <div class="col">
                             <input type="password" class="form-control" placeholder="CONFIRM PASSWORD"
                                 formControlName="confpassword">
                         </div>
                     </div>
-
-                    <div class="row py-2" align="center">
+                    <br>
+                    <div class="row py-2 px-2" align="center">
                         <div class="col">
                             <button pButton type="button" (click)="onRegister()" label="REGISTER"></button>
                         </div>
