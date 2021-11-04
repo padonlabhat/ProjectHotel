@@ -1,1 +1,161 @@
-<p>search works!</p>
+
+  <div class="row">
+    <div class="text-center bt">
+    <form class="search-bar-primary">
+      <input type="search" name="search" pattern=".*\S.*" required>
+      <button class="search-btn" type="submit">
+        <span class ="text-primary">Search</span>
+      </button>
+    </form>
+  </div>
+</div><br/>
+  <div class="container pt-2">
+
+    <div class="row">
+      <div class="col-3">
+
+        <p-dropdown [options]="late" placeholder="Select a price" optionLabel="name" [showClear]="true">
+        </p-dropdown>
+      </div>
+      <div class="col-3">
+
+        <p-dropdown [options]="size" placeholder="Select a size" optionLabel="name" [showClear]="true">
+        </p-dropdown>
+      </div>
+      <div class="col-3">
+
+        <p-dropdown [options]="person" placeholder="Select a person" optionLabel="name" [showClear]="true">
+        </p-dropdown>
+      </div>
+      <div class="col-3">
+
+        <p-dropdown [options]="level" placeholder="Select a level" optionLabel="name" [showClear]="true"></p-dropdown>
+      </div>
+    </div><br />
+
+    <div class="row pt-3">
+      <button pButton pRipple type="button" label="Choose" class="p-button-rounded p-button-primary"
+        data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+    </div><br />
+    <!-- ****photo***** -->
+  <div class = "row">
+    <div class="col-3">
+      <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">S</div>
+          <!-- Product image-->
+          <img class="card-img-top" src="assets/img/room5.jpg" alt="..." />
+          <!-- Product details-->
+          <div class="card-body p-4">
+              <div class="text-center">
+                  <!-- Product name-->
+                  <h5 class="fw-bolder" id ="A">Room</h5>
+                  <!-- Product price-->
+                  <span class="text-muted text-decoration-line-through">$50.00</span>
+                  $25.00
+              </div>
+          </div>
+          <!-- Product actions-->
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="booking">choose</a></div>
+          </div>
+      </div>
+  </div>
+  <div class="col-3">
+    <div class="card h-100">
+        <!-- Sale badge-->
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">S</div>
+        <!-- Product image-->
+        <img class="card-img-top" src="assets/img/room5.jpg" alt="..." />
+        <!-- Product details-->
+        <div class="card-body p-4">
+            <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder" id ="B">Room</h5>
+                <!-- Product price-->
+                <span class="text-muted text-decoration-line-through">$50.00</span>
+                $25.00
+            </div>
+        </div>
+        <!-- Product actions-->
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="booking">choose</a></div>
+        </div>
+    </div>
+</div>
+<div class="col-3">
+  <div class="card h-100">
+      <!-- Sale badge-->
+      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">S</div>
+      <!-- Product image-->
+      <img class="card-img-top" src="assets/img/room5.jpg" alt="..." />
+      <!-- Product details-->
+      <div class="card-body p-4">
+          <div class="text-center">
+              <!-- Product name-->
+              <h5 class="fw-bolder" id ="C">Room</h5>
+              <!-- Product price-->
+              <span class="text-muted text-decoration-line-through">$50.00</span>
+              $25.00
+          </div>
+      </div>
+      <!-- Product actions-->
+      <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="booking">choose</a></div>
+      </div>
+  </div>
+</div>
+<div class="col-3">
+  <div class="card h-100">
+      <!-- Sale badge-->
+      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">S</div>
+      <!-- Product image-->
+      <img class="card-img-top" src="assets/img/room5.jpg" alt="..." />
+      <!-- Product details-->
+      <div class="card-body p-4">
+          <div class="text-center">
+              <!-- Product name-->
+              <h5 class="fw-bolder" id ="D">Room</h5>
+              <!-- Product price-->
+              <span class="text-muted text-decoration-line-through">$50.00</span>
+              $25.00
+          </div>
+      </div>
+      <!-- Product actions-->
+      <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="booking">choose</a></div>
+      </div>
+  </div>
+</div>
+</div>
+    <!-- ********* -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">คำเตือน</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Submit ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <a type="button" class="btn btn-primary" href="roomdetail">Accept</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br/>
+
+<!-- ******map******* -->
+<div class="text-center">
+  <iframe
+    src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+  <br />
+  <small><a
+      href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
+</div>
