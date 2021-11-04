@@ -10,32 +10,18 @@ import {DropdownModule} from 'primeng/dropdown'; // include this for dropdown su
 })
 export class SearchComponent implements OnInit {
   constructor() { }
-  late = [
-    { name: "1500" },
-    { name: "2000" },
-    { name: "3000" },
-    { name: "4000" },
-    { name: "5000" },
+  heroes = [
+    { id: 11, name: 'Mr. Nice', country: 'India' },
+    { id: 12, name: 'Narco' , country: 'USA'},
+    { id: 13, name: 'Bombasto' , country: 'UK'},
+    { id: 14, name: 'Celeritas' , country: 'Canada' },
+    { id: 15, name: 'Magneta' , country: 'Russia'},
+    { id: 16, name: 'RubberMan' , country: 'China'},
+    { id: 17, name: 'Dynama' , country: 'Germany'},
+    { id: 18, name: 'Dr IQ' , country: 'Hong Kong'},
+    { id: 19, name: 'Magma' , country: 'South Africa'},
+    { id: 20, name: 'Tornado' , country: 'Sri Lanka'}
   ];
-  size = [
-    { name: "S" },
-    { name: "M" },
-    { name: "L" },
-    { name: "XL" },
-    { name: "XXL" },
-  ];
-  person = [
-    { name: "1" },
-    { name: "2" },
-    { name: "3" },
-    { name: "4" },
-    { name: "5" },
-  ];
-  level = [
-    { name: "normal" },
-    { name: "Exclusive" }
-  ];
-
   
   ngOnInit(): void {
   }
