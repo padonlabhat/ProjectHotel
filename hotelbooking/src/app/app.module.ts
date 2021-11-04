@@ -17,14 +17,14 @@ import { HomeComponent } from './home/home.component';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {CalendarModule} from 'primeng/calendar';//g1 caledar and time
 import {DropdownModule} from 'primeng/dropdown';//g2 dropdown
-import {ButtonModule} from 'primeng/button';//g3 button
+import {ButtonModule} from 'primeng/button';//payment
 import {FileUploadModule} from 'primeng/fileupload';//g4 uploand
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {OrderListModule} from 'primeng/orderlist';
 import { RegisterComponent } from './register/register.component';
 
-
+import {InputTextModule} from 'primeng/inputtext';//payment
 
 
 @NgModule({
@@ -55,6 +55,7 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     ReactiveFormsModule,
     OrderListModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]

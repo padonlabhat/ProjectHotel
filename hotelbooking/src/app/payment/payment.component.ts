@@ -6,23 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-  payform = [
-    { name: "HTML" },
-    { name: "ReactJS" },
-    { name: "Angular" },
-    { name: "Bootstrap" },
-    { name: "PrimeNG" },
-  ];
-  payto = [
-    { name: "HTML" },
-    { name: "ReactJS" },
-    { name: "Angular" },
-    { name: "Bootstrap" },
-    { name: "PrimeNG" },
-  ];
-  constructor() { }
+  name_card= '';
+  number_card= '';
+  expiry_card= '';
+  cvv_card= '';
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
+    
   }
 
 }
