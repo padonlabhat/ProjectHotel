@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DropdownModule} from 'primeng/dropdown'; // include this for dropdown support
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+
+ 
+
   constructor() { }
   heroes = [
     { id: 11, name: 'Mr. Nice', country: 'India' },
@@ -25,5 +24,6 @@ export class SearchComponent implements OnInit {
   
   ngOnInit(): void {
   }
-
+ 
+  
 }
