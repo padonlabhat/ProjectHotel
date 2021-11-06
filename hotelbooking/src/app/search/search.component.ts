@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 
-
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -9,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
   constructor() { }
- 
+ term : any;
   list = [{ 
       id: 1, name: 'Room1' , country: 'India', price : '2000' },
     { id: 2, name: 'Room2' , country: 'USA', price : '1500'},
