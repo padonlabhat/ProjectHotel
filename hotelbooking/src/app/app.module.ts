@@ -32,7 +32,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PipesFiltersModule } from 'ng-pipe-filter';
 import { StringPipesModule, ObjectPipesModule, BooleanPipesModule, MathPipesModule } from 'ng-pipe-filter'
-@
+
 @NgModule({
   declarations: [
     AppComponent,
