@@ -23,10 +23,12 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {OrderListModule} from 'primeng/orderlist';
 import { RegisterComponent } from './register/register.component';
-
 import {InputTextModule} from 'primeng/inputtext';//payment
 
 
+import { AngularFireModule } from '@angular/fire';
+import { firebaseConfig } from './../environments/firebase.config';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +57,8 @@ import {InputTextModule} from 'primeng/inputtext';//payment
     FormsModule,
     ReactiveFormsModule,
     OrderListModule,
-    InputTextModule
+    InputTextModule,AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
