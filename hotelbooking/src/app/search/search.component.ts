@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AngularFireList } from '@angular/fire/database';
+import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+import {AngularFireDatabase} from 'angularfire2/database';
 
 @Component({
   selector: 'app-search',
@@ -7,7 +10,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  constructor() { }
+  public hotelbooking: Observable<any>[] = [];
+  constructor(searchs : AngularFireDatabase,
+              private db: AngularFireDatabase) { 
+
+
+const itemsRef: AngularFireList<any> = searchs.list('hotelbooking');
+itemsRef.valueChanges().subscribe(
+x => {this.hotelbooking = x;});
+
+
+}
+
  term : any;
   list = [{ 
       id: 1, name: 'Room1' , country: 'India', price : '2000' },
@@ -35,5 +49,14 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
  
-  
+addWiki (data : NgForm){
+  console.log(data.value);
+  this.db.list("/hotelbooking").push(data.value);
 }
+
+
+
+}
+
+
+
