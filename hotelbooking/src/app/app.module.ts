@@ -26,7 +26,7 @@ import { RegisterComponent } from './register/register.component';
 import {InputTextModule} from 'primeng/inputtext';//payment
 
 
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from './../environments/firebase.config';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
