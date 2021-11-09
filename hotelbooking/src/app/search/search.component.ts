@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireList } from '@angular/fire/database';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import {AngularFireDatabase} from 'angularfire2/database';
@@ -14,10 +13,6 @@ export class SearchComponent implements OnInit {
   constructor(searchs : AngularFireDatabase,
               private db: AngularFireDatabase) { 
 
-
-const itemsRef: AngularFireList<any> = searchs.list('hotelbooking');
-itemsRef.valueChanges().subscribe(
-x => {this.hotelbooking = x;});
 
 
 }
