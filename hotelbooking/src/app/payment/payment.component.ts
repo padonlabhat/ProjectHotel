@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase,AngularFireList }  from 'angularfire2/database';
+
+import { Observable } from 'rxjs';
+
+
+
 
 @Component({
   selector: 'app-payment',
@@ -10,10 +16,11 @@ export class PaymentComponent implements OnInit {
   number_card= '';
   expiry_card= '';
   cvv_card= '';
-  constructor() {
-    
-   }
+  public hotelbooking: Observable<any>[] = [];
+  constructor(private db: AngularFireDatabase) { 
+    this.db.object('payment/0').set({id : 1,name :  'game'})
 
+}
   ngOnInit(): void {
     
   }
