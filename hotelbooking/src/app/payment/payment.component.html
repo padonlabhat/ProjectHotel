@@ -54,12 +54,39 @@
                        
              
                     </div>
-                </div>
-            
-               <h1 class = " text-center">Title</h1>
+                        </div>
+                    
+                            <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Order</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Number</th>
+                                <th scope="col">expiry</th>
+                                <th scope="col">cvv</th>
+                                <th scope="col">status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor='let payment of _paymentList; let i = index;'>
+                                    <td>{{i+1}}</td>
+                                    <td>order from focus</td>
+                                    <td>{{payment.name}}</td>
+                                    <td>{{payment.number}}</td>
+                                    <td>{{payment.expiry}}</td>
+                                    <td>{{payment.cvv}}</td>
+                                    <td>status</td>
+                                </tr>
+                            </tbody>
+                            </table>
+                           
+
+    
+    
 
 
-                 
+
             </div>
         </div>
     </div>
