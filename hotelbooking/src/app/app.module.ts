@@ -30,7 +30,7 @@ import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from './../environments/firebase.config';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
+import { CrudService } from './service/crud.service'; 
 
 @NgModule({
   declarations: [
@@ -65,7 +65,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AngularFireDatabaseModule,
     Ng2SearchPipeModule,
   ],
-  providers: [],
+  providers: [CrudService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
