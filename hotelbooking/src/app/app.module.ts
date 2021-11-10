@@ -27,12 +27,11 @@ import {InputTextModule} from 'primeng/inputtext';//payment
 
 
 import { AngularFireModule } from 'angularfire2';
-import {environment} from '../environments/environment';
+import { firebaseConfig } from './../environments/firebase.config';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import {AngularFirestoreModule} from 'angularfire2/Firestore'
-import {AngularFirestore} from 'angularfire2/Firestore'
-import { CrudService } from './service/crud.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,10 +60,10 @@ import { CrudService } from './service/crud.service';
     FormsModule,
     ReactiveFormsModule,
     OrderListModule,
-    InputTextModule,AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,Ng2SearchPipeModule,AngularFirestoreModule,AngularFirestore
+    InputTextModule,AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,Ng2SearchPipeModule,
   ],
-  providers: [CrudService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
