@@ -63,7 +63,7 @@ export class PaymentComponent implements OnInit {
  }
 
   clearFields(){
-    this._name = '';
+    this._name = '',
 
   }
   ngOnInit(): void {
