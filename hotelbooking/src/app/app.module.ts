@@ -30,9 +30,6 @@ import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from './../environments/firebase.config';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { UproomComponent } from './uproom/uproom.component';
-
-
 
 
 @NgModule({
@@ -48,8 +45,7 @@ import { UproomComponent } from './uproom/uproom.component';
     ReceiptComponent,
     BookinghistoryComponent,
     HomeComponent,
-    RegisterComponent,
-    UproomComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -67,9 +63,7 @@ import { UproomComponent } from './uproom/uproom.component';
     InputTextModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    Ng2SearchPipeModule
-   
-   
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
