@@ -10,6 +10,7 @@ import { BookinghistoryComponent } from './bookinghistory/bookinghistory.compone
 import { HomeComponent } from './home/home.component';
 import { RoomdetailComponent } from './roomdetail/roomdetail.component';
 import { RegisterComponent } from './register/register.component';
+import { HotelComponent } from './hotel/hotel.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'receipt', component: ReceiptComponent},
   { path: 'bookinghistory', component: BookinghistoryComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'roomdetail', component: RoomdetailComponent}
+  { path: 'roomdetail', component: RoomdetailComponent},
+  { path: 'hotel', component: HotelComponent}
 ];
 
 @NgModule({
