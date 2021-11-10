@@ -15,21 +15,19 @@ import { Observable, ReplaySubject } from 'rxjs';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-  name_card= '';
-  number_card= '';
-  expiry_card= '';
-  cvv_card= '';
+
   public _name!: string;
   public _number!: number;
   public _expiry!: number;
   public _cvv!: number;
+  public _order!: number;
 
   public _paymentList!: Payment[];
 
 
 
   constructor(private db: AngularFireDatabase) { 
- this.db.object('payment/0').set({name : 'game',number : '033215454554668',expiry :  '0425',cvv : '425'})
+ //this.db.object('payment/1').set({order : '100000',name : 'game',number : '033215454554668',expiry :  '0425',cvv : '425'})
   this.getStarted();
  }
  async getStarted(){
@@ -40,7 +38,7 @@ export class PaymentComponent implements OnInit {
     });
     
     console.log(this._paymentList)
-    //this._order = this._paymentList[this._paymentList.length-1].id +1
+    this._order = this._paymentList[this._paymentList.length-1].order +1
 
  }
  getPaymentsFromRealtimeDB(){
@@ -51,6 +49,23 @@ export class PaymentComponent implements OnInit {
    });
  }
  
+ async addpayment(){
+  var data ={
+  name: this._name,
+   number: this._number,
+   expiry:this._expiry,
+   cvv: this._cvv
+
+  }
+  await this.db.object('payment/' + (String(this._order))).set(data);
+  await this.getStarted();
+  this.clearFields();
+ }
+
+  clearFields(){
+    this._name = '',
+
+  }
   ngOnInit(): void {
     
   }
@@ -64,5 +79,6 @@ class Payment {
   number!: number;
   expiry!: number;
   cvv!: number;
+  order!: number;
 
 }

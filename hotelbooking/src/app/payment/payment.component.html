@@ -14,7 +14,7 @@
                         <div class="form-group">
                             <p class="text-muted text-sm mb-0">Name on the card</p>
 
-                              <input type="text" placeholder="Name" size="20" pInputText [(ngModel)]="name_card"> 
+                              <input type="text" placeholder="Name" size="20" pInputText [(ngModel)]='_name'> 
                         </div>
 
 
@@ -23,7 +23,7 @@
                             <p class="text-muted text-sm mb-0">Card Number</p>
                             <div class="row"> 
                             <div class="col">
-                               <input type="text" placeholder="0000 0000 0000 0000" size="19" minlength="19" maxlength="19" pInputText [(ngModel)]="number_card"> 
+                               <input type="Number" placeholder="0000 0000 0000 0000" size="19" minlength="19" maxlength="19" pInputText [(ngModel)]='_number'> 
     
                            /<img class="image ml-1" src="https://i.imgur.com/WIAP9Ku.jpg">
                             </div>
@@ -32,11 +32,11 @@
                         </div>
                         <div class="form-group">
                             <p class="text-muted text-sm mb-0">Expiry date</p> 
-                            <input type="text" placeholder="MM/YY" size="6" minlength="5" maxlength="5" pInputText [(ngModel)]="expiry_card">
+                            <input type="Number" placeholder="MM/YY" size="6" minlength="5" maxlength="5" pInputText [(ngModel)]='_expiry'>
                         </div>
                         <div class="form-group">
                             <p class="text-muted text-sm mb-0">CVV/CVC</p> 
-                            <input type="password"  placeholder="000" size="1" minlength="3" maxlength="3" pInputText [(ngModel)]="cvv_card">
+                            <input type="password"  placeholder="000" size="1" minlength="3" maxlength="3" pInputText [(ngModel)]='_cvv'>
                         </div>
                         
                     </div>
@@ -49,7 +49,7 @@
                             <h2 >
                              ฿<span class="text-primary">59.49</span>
                             </h2>
-                             <button pButton pRipple type="button" label="PAY" class="p-button-rounded mt-2"></button>
+                             <button pButton pRipple type="button" (click)="addpayment()" [disabled]="!_name||!_number||!_expiry||!_cvv" label="PAY" class="p-button-rounded mt-2"></button>
                         </div>
                        
              
@@ -70,8 +70,8 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor='let payment of _paymentList; let i = index;'>
-                                    <td>{{i+1}}</td>
-                                    <td>order from focus</td>
+                                    <td>{{i}}</td>
+                                    <td>{{payment.order}}</td>
                                     <td>{{payment.name}}</td>
                                     <td>{{payment.number}}</td>
                                     <td>{{payment.expiry}}</td>
