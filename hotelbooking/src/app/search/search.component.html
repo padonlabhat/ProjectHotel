@@ -1,149 +1,96 @@
-
- <div class="container">
+<div class="container">
   <div class="row">
     <div class="search-hero">
-      <input class="form-control" type="text" [(ngModel)]="term" name="search" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
+      <input class="form-control" type="text" [(ngModel)]="term" name="search" autocomplete="off"
+        placeholder="&#61442;  Start searching for a hero by id or name or country">
     </div>
   </div>
 </div>
-<br/><hr>
-<div class = "row" >
-  <div class = "col-md-12">
+<br />
+<hr>
+
 <div class="list-group">
-  <a href="booking" class="list-group-item list-group-item-action " *ngFor = "let item of list | filter : term " >
+  <a class="list-group-item list-group-item-action " *ngFor="let search of search | filter : term ">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{item.name}}</h5>
-      <small>Id : {{item.id}}</small>
+      <h5 class="mb-1">Name: {{search.roomN}}</h5>
+      <small>Id : {{search.roomID}}</small>
     </div>
-    <p class="mb-1">{{item.country}}</p>
-    <small>Price : {{item.price}}  Bath</small>
+    <p class="mb-1">{{search.price}} Bath</p>
+    <small>Description : {{search.description}}</small>
+    <button class="btn btn-primary" (click)="save()">{{addBtn}}</button>
   </a>
 </div>
-
-  </div>
-</div>
-<div row ="col-md-4-8" class = " text-center">
-<form class = "col"(ngSubmit)="addWiki(wikiForm)" #wikiForm="ngForm">
-  <label for="name"> Name</label>
-  <input type="text" name="name" ngModel>
-  <label for="description"> Description</label>
-  <textarea name="description" ngModel></textarea><br>
-  <button type="submit">Submit</button>
+<div row="col-md-4-8" class=" text-center">
+  <form class="col" (ngSubmit)="addWiki(wikiForm)" #wikiForm="ngForm">
+    <label for="roomN"> RoomN</label>
+    <input type="text" name="roomN" ngModel>
+    <label for="roomID"> RoomID</label>
+    <input type="text" name="roomID" ngModel>
+    <label for="price"> Price</label>
+    <input type="text" name="price" ngModel>
+    <label for="description"> Description</label>
+    <textarea name="description" ngModel></textarea><br>
+    <button type="submit">Submit</button>
   </form>
 
 </div>
-<!-- ***Slide** -->
+<!-- ***show*** -->
+<span class="p-ml-2">{{roomN}}</span>
+<span class="p-ml-2">{{roomID}}</span>
+<span class="p-ml-2">{{price}}</span>
+<span class="p-ml-2">{{description}}</span>
 
-<div class="container pt-2">
-  <div class = "row">
-    <div class="col-3">
-      <div class="card h-100">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+
+      <th scope="col">roomN</th>
+      <th scope="col">roomID</th>
+      <th scope="col">price</th>
+      <th scope="col">description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let search of search; let i = index;'>
+      <td>{{i+1}}</td>
+
+      <td>{{search.roomN}}</td>
+      <td>{{search.roomID}}</td>
+      <td>{{search.price}}</td>
+      <td>{{search.description}}</td>
+
+    </tr>
+  </tbody>
+</table>
+<!-- ***show*** -->
+<div class="row"> 
+<a class="list-group-item list-group-item-action " *ngFor="let search of search | filter : term ">
+  <div class="container pt-2">
+      <div class="col-md-4">
+        <div class="card h-100">
           <!-- Sale badge-->
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">S</div>
           <!-- Product image-->
           <img class="card-img-top" src="assets/img/room5.jpg" alt="..." />
           <!-- Product details-->
           <div class="card-body p-4">
-              <div class="text-center">
-                  <!-- Product name-->
-                  <h5 class="fw-bolder" id ="A">Room</h5>
-                  <!-- Product price-->
-                  <span class="text-muted text-decoration-line-through">$50.00</span>
-                  $25.00
+            <div class="list-group">
+
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Name: {{search.roomN}}</h5>
+                <small>Id : {{search.roomID}}</small>
               </div>
+              <p class="mb-1">{{search.price}} Bath</p>
+              <small>Description : {{search.description}}</small>
+              <button class="btn btn-primary" (click)="save()">{{addBtn}}</button>
+            </div>
           </div>
           <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="booking">choose</a></div>
           </div>
-      </div>
-  </div>
-  <div class="col-3">
-    <div class="card h-100">
-        <!-- Sale badge-->
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">S</div>
-        <!-- Product image-->
-        <img class="card-img-top" src="assets/img/room5.jpg" alt="..." />
-        <!-- Product details-->
-        <div class="card-body p-4">
-            <div class="text-center">
-                <!-- Product name-->
-                <h5 class="fw-bolder" id ="B">Room</h5>
-                <!-- Product price-->
-                <span class="text-muted text-decoration-line-through">$50.00</span>
-                $25.00
-            </div>
-        </div>
-        <!-- Product actions-->
-        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="booking">choose</a></div>
         </div>
     </div>
+</a> 
 </div>
-<div class="col-3">
-  <div class="card h-100">
-      <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">S</div>
-      <!-- Product image-->
-      <img class="card-img-top" src="assets/img/room5.jpg" alt="..." />
-      <!-- Product details-->
-      <div class="card-body p-4">
-          <div class="text-center">
-              <!-- Product name-->
-              <h5 class="fw-bolder" id ="C">Room</h5>
-              <!-- Product price-->
-              <span class="text-muted text-decoration-line-through">$50.00</span>
-              $25.00
-          </div>
-      </div>
-      <!-- Product actions-->
-      <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="booking">choose</a></div>
-      </div>
-  </div>
-</div>
-<div class="col-3">
-  <div class="card h-100">
-      <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">S</div>
-      <!-- Product image-->
-      <img class="card-img-top" src="assets/img/room5.jpg" alt="..." />
-      <!-- Product details-->
-      <div class="card-body p-4">
-          <div class="text-center">
-              <!-- Product name-->
-              <h5 class="fw-bolder" id ="D">Room</h5>
-              <!-- Product price-->
-              <span class="text-muted text-decoration-line-through">$50.00</span>
-              $25.00
-          </div>
-      </div>
-      <!-- Product actions-->
-      <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="booking">choose</a></div>
-      </div>
-  </div>
-</div>
-</div>
-    <!-- ********* -->
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">คำเตือน</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            Submit ?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <a type="button" class="btn btn-primary" href="roomdetail">Accept</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<br/>
+<br />
