@@ -9,9 +9,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  public hotelbooking: Observable<any>[] = [];
-  constructor(searchs : AngularFireDatabase,
-              private db: AngularFireDatabase) { 
+  constructor(private db: AngularFireDatabase) { 
 
 
 
@@ -48,7 +46,6 @@ addWiki (data : NgForm){
   console.log(data.value);
   this.db.list("/hotelbooking").push(data.value);
 }
-
 
 
 }
