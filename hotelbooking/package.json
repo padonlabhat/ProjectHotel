@@ -29,7 +29,7 @@
     "ng2-search-filter": "^0.5.1",
     "primeflex": "^3.1.0",
     "primeicons": "^4.1.0",
-    "primeng": "^12.2.1",
+    "primeng": "^12.2.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 
+
+
+
+
+
 export class HotelComponent implements OnInit {
 
   lang = [
@@ -16,6 +21,13 @@ export class HotelComponent implements OnInit {
     { name: "Bootstrap" },
     { name: "PrimeNG" },
   ];
+
+
+
+
+
+
+
   
   constructor() {
  

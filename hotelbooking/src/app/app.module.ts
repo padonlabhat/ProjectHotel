@@ -33,6 +33,11 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CrudService } from './service/crud.service';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { InputMaskModule } from 'primeng/inputmask'; //add phone namder
+import {KeyFilterModule} from 'primeng/keyfilter'; //add gmail
+
+
+
 
 @NgModule({
   declarations: [
@@ -47,7 +52,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     ReceiptComponent,
     BookinghistoryComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -67,6 +73,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     AngularFireDatabaseModule,
     Ng2SearchPipeModule,
     AngularFirestoreModule,
+    InputMaskModule,
+    KeyFilterModule,
+    
+
   ],
   providers: [CrudService],
   bootstrap: [AppComponent]
