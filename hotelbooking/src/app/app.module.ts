@@ -14,6 +14,7 @@ import { ReceiptComponent } from './receipt/receipt.component';
 import { HotelComponent } from './hotel/hotel.component';//g4
 import { HomeComponent } from './home/home.component';
 
+
 import { AccordionModule } from 'primeng/accordion';     //accordion and accordion tab
 import { CalendarModule } from 'primeng/calendar';//g1 caledar and time
 import { DropdownModule } from 'primeng/dropdown';//g2 dropdown
@@ -24,14 +25,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrderListModule } from 'primeng/orderlist';
 import { RegisterComponent } from './register/register.component';
 import { InputTextModule } from 'primeng/inputtext';//payment
+import {ToastModule} from 'primeng/toast';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { CrudService } from './service/crud.service';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+// import {AngularFireModule} from '@angular/fire';
+// import {AngularFireDatabaseModule} from '@angular/fire/database';
+// import {environment} from '../environments/environment';
+// import {AngularFirestoreModule} from '@angular/fire/firestore';
+
+
+import { CrudService } from './service/crud.service';
+
 import { InputMaskModule } from 'primeng/inputmask'; //add phone namder
 import {KeyFilterModule} from 'primeng/keyfilter'; //add gmail
 
@@ -74,6 +84,7 @@ import {KeyFilterModule} from 'primeng/keyfilter'; //add gmail
     AngularFirestoreModule,
     InputMaskModule,
     KeyFilterModule,
+    ToastModule,
     
 
   ],

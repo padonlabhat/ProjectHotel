@@ -23,7 +23,7 @@
                             <p class="text-muted text-sm mb-0">Card Number</p>
                             <div class="row"> 
                             <div class="col">
-                               <input type="Number" placeholder="0000 0000 0000 0000" size="19" minlength="19" maxlength="19" pInputText [(ngModel)]='_number'> 
+                               <input type="Number" placeholder="0000 0000 0000 0000" size="19" minlength="16" maxlength="16" pInputText [(ngModel)]='_number'> 
     
                            /<img class="image ml-1" src="https://i.imgur.com/WIAP9Ku.jpg">
                             </div>
@@ -49,34 +49,63 @@
                             <h2 >
                              ฿<span class="text-primary">59.49</span>
                             </h2>
-                             <button pButton pRipple type="button" (click)="addpayment()" [disabled]="!_name||!_number||!_expiry||!_cvv" label="PAY" class="p-button-rounded mt-2"></button>
+                             <button pButton pRipple type="button"  (click)='submitpayment()' [disabled]="!_name||!_number||!_expiry||!_cvv" label="PAY" class="p-button-rounded mt-2"></button>
+
+                            
+                            <p-toast></p-toast>
+                            <p-toast position="top-left" key="tl"></p-toast>
+                            <p-toast position="top-center" key="tc"></p-toast>
+                            <p-toast position="bottom-center" key="bc"></p-toast>
+
+                            <p-toast position="bottom-center" key="c" (onClose)="onReject()" [baseZIndex]="5000">
+                                <ng-template let-message pTemplate="message">
+                                    <div class="p-flex p-flex-column" style="flex: 1">
+                                        <div class="p-text-center">
+                                            <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
+                                            <h4>{{message.summary}}</h4>
+                                            <p>{{message.detail}}</p>
+                                        </div>
+                                        <div class="p-grid p-fluid">
+                                            <div class="p-col-6">
+                                                <button type="button" pButton (click)="onConfirm()" label="Yes" class="p-button-success"></button>
+                                            </div>
+                                            <div class="p-col-6">
+                                                <button type="button" pButton (click)="onReject()" label="No" class="p-button-secondary"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-toast>
                         </div>
                        
-             
                     </div>
                         </div>
-                    
+                            <span class="p-ml-2">{{_name}}</span>
+                            <span class="p-ml-2">{{_number}}</span>
+                            <span class="p-ml-2">{{_expiry}}</span>
+                            <span class="p-ml-2">{{_cvv}}</span>
+                       
                             <table class="table">
                             <thead>
                                 <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Order</th>
+                          
                                 <th scope="col">Name</th>
                                 <th scope="col">Number</th>
                                 <th scope="col">expiry</th>
                                 <th scope="col">cvv</th>
-                                <th scope="col">status</th>
+                              
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor='let payment of _paymentList; let i = index;'>
-                                    <td>{{i}}</td>
-                                    <td>{{payment.order}}</td>
+                                    <td>{{i+1}}</td>
+                               
                                     <td>{{payment.name}}</td>
                                     <td>{{payment.number}}</td>
                                     <td>{{payment.expiry}}</td>
                                     <td>{{payment.cvv}}</td>
-                                    <td>status</td>
+                                    
                                 </tr>
                             </tbody>
                             </table>

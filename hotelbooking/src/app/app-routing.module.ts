@@ -12,6 +12,7 @@ import { RoomdetailComponent } from './roomdetail/roomdetail.component';
 import { RegisterComponent } from './register/register.component';
 import { HotelComponent } from './hotel/hotel.component';
 
+
 const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'login', component: LoginComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'bookinghistory', component: BookinghistoryComponent},
   { path: 'home', component: HomeComponent},
   { path: 'roomdetail', component: RoomdetailComponent},
-  { path: 'hotel', component: HotelComponent}
+  { path: 'hotel', component: HotelComponent},
+
 ];
 
 @NgModule({
