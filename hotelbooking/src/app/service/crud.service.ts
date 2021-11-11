@@ -28,7 +28,10 @@ export class CrudService {
     this.fireservices.doc('Employee/' + record_id).delete();
   }
 
-
+  create_NewUsername(record:string)
+  {
+    return this.fireservices.collection('login').add(record);
+  }
 
 
 
