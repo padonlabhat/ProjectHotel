@@ -44,6 +44,7 @@ import { CrudService } from './service/crud.service';
 
 import { InputMaskModule } from 'primeng/inputmask'; //add phone namder
 import {KeyFilterModule} from 'primeng/keyfilter'; //add gmail
+import { ConfirmDialogModule } from 'primeng/confirmdialog'; //Use in login and register
 
 
 
@@ -85,6 +86,7 @@ import {KeyFilterModule} from 'primeng/keyfilter'; //add gmail
     InputMaskModule,
     KeyFilterModule,
     ToastModule,
+    ConfirmDialogModule,
     
 
   ],
