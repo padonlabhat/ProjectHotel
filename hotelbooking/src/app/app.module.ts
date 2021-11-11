@@ -19,8 +19,10 @@ import { AccordionModule } from 'primeng/accordion';     //accordion and accordi
 import { CalendarModule } from 'primeng/calendar';//g1 caledar and time
 import { DropdownModule } from 'primeng/dropdown';//g2 dropdown
 import { ButtonModule } from 'primeng/button';//payment
-import { FileUploadModule } from 'primeng/fileupload';//g4 uploand
-import { HttpClientModule } from '@angular/common/http';
+
+import { FileUploadModule } from 'primeng/fileupload';//hotel
+import { HttpClientModule } from '@angular/common/http';//hotel
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrderListModule } from 'primeng/orderlist';
 import { RegisterComponent } from './register/register.component';
@@ -34,19 +36,12 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
-// import {AngularFireModule} from '@angular/fire';
-// import {AngularFireDatabaseModule} from '@angular/fire/database';
-// import {environment} from '../environments/environment';
-// import {AngularFirestoreModule} from '@angular/fire/firestore';
-
-
 import { CrudService } from './service/crud.service';
 
 import { InputMaskModule } from 'primeng/inputmask'; //add phone namder
 import {KeyFilterModule} from 'primeng/keyfilter'; //add gmail
 import { ConfirmDialogModule } from 'primeng/confirmdialog'; //Use in login and register
-
-
+import {InputNumberModule} from 'primeng/inputnumber';//hotel
 
 
 @NgModule({
@@ -87,7 +82,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog'; //Use in login and 
     KeyFilterModule,
     ToastModule,
     ConfirmDialogModule,
-    
+    InputNumberModule
+   
 
   ],
   providers: [CrudService],

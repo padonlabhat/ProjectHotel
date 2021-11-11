@@ -1,4 +1,4 @@
-+<div class="container">
+<div class="container">
     <div class="row">
 
             <div class="card">
@@ -22,9 +22,10 @@
                 
                     
                 <div class="row">
+                <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
                         <div class="p-field p-col-12 pt-4">
                         <span class="p-float-label">
-                            <input type="text" id="inputtext" pInputText size="53" > 
+                            <input type="text" id="inputtext" pInputText size="57" > 
                             <label for="inputtext">Name Hotel</label>
                         </span>
                          </div>
@@ -38,14 +39,30 @@
                         </div>
                     </div>
                     
-                    <div class ='row pt-2'> 
-                   <p-dropdown [options]="lang" placeholder="Enter Name"
-                   optionLabel="name" [showClear]="true" 
-                   class="ng-invalid ">
-                   </p-dropdown>   
-                </div>  
-
-
+                    <div class ='row pt-2 '> 
+                   
+                  
+                
+                      <div class="p-field p-col-12 pt-4">
+                        <span class="p-float-label">
+                            
+                  
+                         <input type="text" id="inputtext" pInputText size="57" > 
+                            <label for="inputtext">address</label>
+                        </span>
+                         
+                            <div class="p-field p-col-12 p-md-3">
+                                <label for="minmax-buttons">size room</label>
+                                <p-inputNumber mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="20" [max]="100" spinnerMode="horizontal" [step]="0.25">
+                                </p-inputNumber>
+                            </div>
+                            <div class="p-field p-col-12 p-md-3">
+                                <label for="minmax-buttons">number room</label>
+                                <p-inputNumber mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100">
+                                </p-inputNumber>
+                            </div>
+                         </div>
+                    </div>  
 
                
                
@@ -75,11 +92,11 @@
                             </div>
                              <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">Wi-Fi</label>
+                                <label class="form-check-label" for="exampleRadios1">Free breakfast</label>
                             </div>
                              <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">Wi-Fi</label>
+                                <label class="form-check-label" for="exampleRadios1">Aircondition</label>
                             </div>
                             
                           
@@ -89,20 +106,23 @@
                         <div class="col">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="fฃorm-check-label" for="exampleRadios1">Wi-Fi</label>
+                                <label class="fฃorm-check-label" for="exampleRadios1">Pet(cat-dog)</label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">Wi-Fi</label>
+                                <label class="form-check-label" for="exampleRadios1">Parking</label>
                             </div>
                              <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">Wi-Fi</label>
+                                <label class="form-check-label" for="exampleRadios1">Pool</label>
                             </div>
                         </div>
                          
-                     </div>   
+                     </div>  
+                               
 
+                        
+                        <button pButton pRipple type="button"  label="PAY" class="p-button-rounded mt-2"></button>
                     
 
             </div>

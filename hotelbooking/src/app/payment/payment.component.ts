@@ -5,7 +5,6 @@ import {MessageService} from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
 
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-
 import { Observable, ReplaySubject } from 'rxjs';
 
 import {CrudService} from '../service/crud.service';
@@ -30,7 +29,8 @@ export class PaymentComponent implements OnInit {
 
   constructor(private db : AngularFireDatabase,private messageService: MessageService, private primengConfig: PrimeNGConfig) { 
  //this.db.object('payment/1').set({order : '100000',name : 'game',number : '033215454554668',expiry :  '0425',cvv : '425'})
-  this.getStarted();
+  
+ this.getStarted();
  }
  async getStarted(){
     var payment: Payment[];
@@ -39,8 +39,9 @@ export class PaymentComponent implements OnInit {
      this._paymentList = payment;
     });
     
+
     console.log(this._paymentList)
-   // this._order = this._paymentList[this._paymentList.length-1].order +1
+    this._order = this._paymentList[this._paymentList.length-1].order +1
     //console.log(this._order)
  }
  getPaymentsFromRealtimeDB(){
@@ -53,7 +54,9 @@ export class PaymentComponent implements OnInit {
  
  async submitpayment(){
   this.showSuccess();
-  if(this._name){
+ 
+  
+  if(this._name ){
 
   }
   // var data ={
@@ -69,7 +72,7 @@ export class PaymentComponent implements OnInit {
   this.clearFields();
  }
 
-  clearFields(){
+clearFields(){
     this._name = '';
 
   }
@@ -81,7 +84,7 @@ export class PaymentComponent implements OnInit {
 
   }
 
-  showSuccess() {
+showSuccess() {
     this.messageService.add({key: 'tc',severity:'success', summary: 'Success', detail: 'Message Content'});
 }
 showError() {
