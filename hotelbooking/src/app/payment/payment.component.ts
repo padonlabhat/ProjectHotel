@@ -20,7 +20,7 @@ export class PaymentComponent implements OnInit {
   public _number!: number;
   public _expiry!: number;
   public _cvv!: number;
-  public _order!: number;
+  public _id!: number;
 
   public _paymentList!: Payment[];
 
@@ -41,7 +41,7 @@ export class PaymentComponent implements OnInit {
     
 
     console.log(this._paymentList)
-    this._order = this._paymentList[this._paymentList.length-1].order +1
+    this._id = this._paymentList[this._paymentList.length-1].id +1
     //console.log(this._order)
  }
  getPaymentsFromRealtimeDB(){
@@ -52,26 +52,24 @@ export class PaymentComponent implements OnInit {
    });
  }
  
- async submitpayment(){
+ async addpayment(){
   this.showSuccess();
- 
+  var data ={
+   name: this._name,
+   number: this._number,
+   expiry:this._expiry,
+   cvv: this._cvv
   
-  if(this._name ){
-
   }
-  // var data ={
-  // name: this._name,
-  //  number: this._number,
-  //  expiry:this._expiry,
-  //  cvv: this._cvv
-
-  // }
- 
-  //await this.db.object('payment/' + (String(this._order))).set(data);
+  console.log(this._name)
+  await this.db.object('payment/' + (String(this._id))).set(data);
   await this.getStarted();
   this.clearFields();
  }
+ async submitpayment(){
+  this.showSuccess();
 
+ }
 clearFields(){
     this._name = '';
 
@@ -108,6 +106,6 @@ class Payment {
   number!: number;
   expiry!: number;
   cvv!: number;
-  order!: number;
+  id!: number;
 
 }

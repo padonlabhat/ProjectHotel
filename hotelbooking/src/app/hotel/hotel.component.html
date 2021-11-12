@@ -25,7 +25,7 @@
                 <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
                         <div class="p-field p-col-12 pt-4">
                         <span class="p-float-label">
-                            <input type="text" id="inputtext" pInputText size="57" > 
+                            <input type="text" id="inputtext" pInputText size="57" [(ngModel)]='_name' > 
                             <label for="inputtext">Name Hotel</label>
                         </span>
                          </div>
@@ -33,7 +33,7 @@
                          <div class="p-col-12 pt-2">
                             <div class="p-inputgroup">
                                 <span class="p-inputgroup-addon">฿</span>
-                                <input type="text-center"  pInputText placeholder="Price" >   
+                                <input type="text-center"  pInputText placeholder="Price" [(ngModel)]='_price' >   
                                 <span class="p-inputgroup-addon">.00</span>      
                             </div>
                         </div>
@@ -47,18 +47,18 @@
                         <span class="p-float-label">
                             
                   
-                         <input type="text" id="inputtext" pInputText size="57" > 
+                         <input type="text" id="inputtext" pInputText size="57"[(ngModel)]='_address'> 
                             <label for="inputtext">address</label>
                         </span>
-                         
+                            
                             <div class="p-field p-col-12 p-md-3">
                                 <label for="minmax-buttons">size room</label>
-                                <p-inputNumber mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="20" [max]="100" spinnerMode="horizontal" [step]="0.25">
+                                <p-inputNumber mode="decimal"[(ngModel)]='_sizeroom' [showButtons]="true" inputId="minmax-buttons" [min]="20" [max]="100" spinnerMode="horizontal" [step]="0.25">
                                 </p-inputNumber>
                             </div>
                             <div class="p-field p-col-12 p-md-3">
-                                <label for="minmax-buttons">number room</label>
-                                <p-inputNumber mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100">
+                                <label for="minmax-buttons">total room</label>
+                                <p-inputNumber mode="decimal"[(ngModel)]='_totalroom'[showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100">
                                 </p-inputNumber>
                             </div>
                          </div>
@@ -68,7 +68,7 @@
                
                     <div class="p-col-12 p-md-1 g-2">
                          <span>Gmail </span>
-                    <input type="text" pInputText  placeholder="Enter gmail">
+                    <input type="text"[(ngModel)]='_gmail' pInputText  placeholder="Enter gmail">
                 </div>
 
 
@@ -76,7 +76,7 @@
 
                 <div class="p-col-12 p-md-6 p-lg-2">
                             <span>Phone </span>
-                            <p-inputMask mask="(999) 999-9999"  placeholder="(999) 999-9999"></p-inputMask>
+                            <p-inputMask mask="(999) 999-9999"[(ngModel)]='_phone'  placeholder="(999) 999-9999"></p-inputMask>
                         </div>
 
 
@@ -85,17 +85,17 @@
 
                     
 
-                        <div class="col">             
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">Wi-Fi</label>
+                        <div class="col">       
+                              <div class="form-check">
+                                <input class="form-check-input" [(ngModel)]='_WiFi'type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <label class="form-check-label" for="exampleRadios1">WiFi</label>
                             </div>
                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <input class="form-check-input" [(ngModel)]='_freebf'type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                 <label class="form-check-label" for="exampleRadios1">Free breakfast</label>
                             </div>
                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <input class="form-check-input" [(ngModel)]='_air' type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                 <label class="form-check-label" for="exampleRadios1">Aircondition</label>
                             </div>
                             
@@ -105,31 +105,63 @@
                          
                         <div class="col">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <input class="form-check-input"[(ngModel)]='_pet' type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                 <label class="fฃorm-check-label" for="exampleRadios1">Pet(cat-dog)</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <input class="form-check-input"[(ngModel)]='_parking' type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                 <label class="form-check-label" for="exampleRadios1">Parking</label>
                             </div>
                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <input class="form-check-input"[(ngModel)]='_pool' type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                 <label class="form-check-label" for="exampleRadios1">Pool</label>
                             </div>
+                            
                         </div>
                          
                      </div>  
                                
 
                         
-                        <button pButton pRipple type="button"  label="PAY" class="p-button-rounded mt-2"></button>
+                        <button pButton pRipple type="button" (click)="addroom()"  label="PAY" class="p-button-rounded mt-2"></button>
                     
 
             </div>
         </div>
          <div class="col">
             <div class="card">
-                <h3>My Order</h3>
+                <h3>My Room</h3>
+                     <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                          
+                                <th scope="col">Name</th>
+                                <th scope="col">price</th>
+                                <th scope="col">address</th>
+                                <th scope="col">sizeroom</th>
+                                <th scope="col">totalroom</th>
+                                <th scope="col">gmail</th>
+                                <th scope="col">Phone</th>
+                              
+                                </tr>
+                            </thead>
+                            <tbody>
+                            
+                                <tr *ngFor='let room of _roomList; let i = index;'>
+                                    <td>{{i+1}}</td>
+                               
+                                    <td>{{room.name}}</td>
+                                    <td>{{room.price}}</td>
+                                    <td>{{room.address}}</td>
+                                    <td>{{room.sizeroom}}</td>
+                                    <td>{{room.totalroom}}</td>
+                                    <td>{{room.gmail}}</td>
+                                     <td>{{room.phone}}</td>
+                                    
+                                </tr>
+                            </tbody>
+                            </table>
             </div>
         </div>
                 
