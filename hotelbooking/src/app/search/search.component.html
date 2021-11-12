@@ -2,95 +2,47 @@
   <div class="row">
     <div class="search-hero">
       <input class="form-control" type="text" [(ngModel)]="term" name="search" autocomplete="off"
-        placeholder="&#61442;  Start searching for a hero by id or name or country">
+        placeholder="&#61442;  Search by room Name,roomID,description">
     </div>
   </div>
-</div>
-<br />
-<hr>
 
-<div class="list-group">
-  <a class="list-group-item list-group-item-action " *ngFor="let search of search | filter : term ">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Name: {{search.roomN}}</h5>
-      <small>Id : {{search.roomID}}</small>
-    </div>
-    <p class="mb-1">{{search.price}} Bath</p>
-    <small>Description : {{search.description}}</small>
-    <button class="btn btn-primary" (click)="save()">{{addBtn}}</button>
-  </a>
-</div>
-<div row="col-md-4-8" class=" text-center">
-  <form class="col" (ngSubmit)="addWiki(wikiForm)" #wikiForm="ngForm">
-    <label for="roomN"> RoomN</label>
-    <input type="text" name="roomN" ngModel>
-    <label for="roomID"> RoomID</label>
-    <input type="text" name="roomID" ngModel>
-    <label for="price"> Price</label>
-    <input type="text" name="price" ngModel>
-    <label for="description"> Description</label>
-    <textarea name="description" ngModel></textarea><br>
-    <button type="submit">Submit</button>
-  </form>
-
-</div>
-<!-- ***show*** -->
-<span class="p-ml-2">{{roomN}}</span>
-<span class="p-ml-2">{{roomID}}</span>
-<span class="p-ml-2">{{price}}</span>
-<span class="p-ml-2">{{description}}</span>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-
-      <th scope="col">roomN</th>
-      <th scope="col">roomID</th>
-      <th scope="col">price</th>
-      <th scope="col">description</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor='let search of search; let i = index;'>
-      <td>{{i+1}}</td>
-
-      <td>{{search.roomN}}</td>
-      <td>{{search.roomID}}</td>
-      <td>{{search.price}}</td>
-      <td>{{search.description}}</td>
-
-    </tr>
-  </tbody>
-</table>
-<!-- ***show*** -->
-<div class="row"> 
-<a class="list-group-item list-group-item-action " *ngFor="let search of search | filter : term ">
-  <div class="container pt-2">
-      <div class="col-md-4">
-        <div class="card h-100">
-          <!-- Sale badge-->
-          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">S</div>
-          <!-- Product image-->
-          <img class="card-img-top" src="assets/img/room5.jpg" alt="..." />
-          <!-- Product details-->
-          <div class="card-body p-4">
-            <div class="list-group">
-
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Name: {{search.roomN}}</h5>
-                <small>Id : {{search.roomID}}</small>
+  <br />
+  <hr>
+  <div class="container"> 
+    <div class="row">
+      
+        <div class="col-sm">
+          <div col-4>
+            <div class="  bg-primary text-center">Hotel </div>
+            <a class="list-group-item list-group-item-action " *ngFor="let search of search | filter : term ">
+              <div *ngIf="search">
+                <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                  {{search.price}} Bath
+                </div>
+                <!-- <img  src="assets/img/room5.jpg" alt="..." /> -->
+                <div class="card-body p-4">
+                  <div class="list-group">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Name: {{search.name}}</h5>
+                      <p class="mb-1">Price :{{search.price}} Bath</p></div>
+                      <h5 class="mb-1"> Address: {{search.address}}</h5>
+                      <h5 class="mb-1">            Phone : {{search.phone}}</h5>
+                      <h5 class="mb-1">   roomsize : {{search.sizeroom}}</h5>
+                      <h5 class="mb-1">   totalroom : {{search.totalroom}}</h5>
+                   
+                   
+                    <button class="btn btn-primary"  href="roomdetail" type="submit">Choose</button>
+                  </div>
+                </div>
               </div>
-              <p class="mb-1">{{search.price}} Bath</p>
-              <small>Description : {{search.description}}</small>
-              <button class="btn btn-primary" (click)="save()">{{addBtn}}</button>
-            </div>
-          </div>
-          <!-- Product actions-->
+            </a>
           </div>
         </div>
     </div>
-</a> 
+  </div>
 </div>
-<br />
+
+
+
+  
+      

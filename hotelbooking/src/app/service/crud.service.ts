@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from 'angularfire2/firestore';
 
@@ -5,8 +6,8 @@ import {AngularFirestore} from 'angularfire2/firestore';
   providedIn: 'root'
 })
 export class CrudService {
-
-  constructor(public fireservices:AngularFirestore) { }
+  items: search[] = [];
+  constructor(public fireservices:AngularFirestore,private http: HttpClient) { }
 
   create_Newemployee(Record:string)
   {
@@ -34,6 +35,31 @@ export class CrudService {
   }
 
 
+  
+  addToCart(search:string)
+  {
+    return this.fireservices.collection('Booking').add(search);
+  }
+}
 
 
+export interface search {
+  roomN: string;
+  roomID: string;
+  price: number;
+  description: string;
+  _id: string;
+  _name: string;
+  _price: number;
+  _address: string;
+  _sizeroom: number;
+  _totalroom: number;
+  _gmail: string;
+  _phone: number;
+  _WiFi: any;
+  _freebf: any;
+  _air: any;
+  _pet: any;
+  _parking: any;
+  _pool: any;
 }
