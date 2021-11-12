@@ -53,7 +53,7 @@ export class HotelComponent implements OnInit {
         this._roomList = room;
        });
        
-       console.log(this._WiFi)
+      
        console.log(this._roomList)
        this._id = this._roomList[this._roomList.length-1].id +1
     
@@ -76,12 +76,12 @@ export class HotelComponent implements OnInit {
        totalroom: this._totalroom,
        gmail :this._gmail,
        phone : this._phone,
-       WiFi : this._WiFi,
-       freebf :this._freebf,
-       air:this._air,
-       pet:this._pet,
-       parking:this._parking,
-       pool:this._pool,
+      //  WiFi : this._WiFi,
+      //  freebf :this._freebf,
+      //  air:this._air,
+      //  pet:this._pet,
+      //  parking:this._parking,
+      //  pool:this._pool,
       
       }
      
