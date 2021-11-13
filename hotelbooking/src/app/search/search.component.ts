@@ -15,14 +15,14 @@ export class SearchComponent implements OnInit {
 
 
   public roomN!: string;
-  public roomID!: string;
+  public roomID!: number;
   public price!: number;
   public description!: String;
   public fileUpload!: any;
   term: any;
   public search!: search[];
   public userProfileImg: any;
-  public _id!: string;
+  public _id!: number;
   public _name!: string;
   public _price!: number;
   public _address!: string;
@@ -90,10 +90,10 @@ export class SearchComponent implements OnInit {
 }
 class search {
   roomN!: string;
-  roomID!: string;
+  roomID!: number;
   price!: number;
   description!: string;
-  _id!: string;
+  _id!: number;
   _name!: string;
   _price!: number;
   _address!: string;
