@@ -10,12 +10,12 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="p-button-rounded p-button-success fa fa-user-circle" type="button" label="Confirm"
-        data-bs-toggle="modal" data-bs-target="#userModal" aria-hidden="true"> User</a>
+        data-bs-toggle="modal" data-bs-target="#userModal" aria-hidden="true"> {{user}}</a>
       <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header ">
-              <h5 class="modal-title fa fa-user-circle" id="exampleModalLabel"> Username</h5>
+              <h5 class="modal-title fa fa-user-circle" id="exampleModalLabel"> {{user}}</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" align="left">
@@ -53,7 +53,6 @@
     </div>
   </div>
 </nav>
-
 
 
 <router-outlet></router-outlet>

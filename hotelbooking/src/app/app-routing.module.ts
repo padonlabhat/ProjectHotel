@@ -11,10 +11,11 @@ import { HomeComponent } from './home/home.component';
 import { RoomdetailComponent } from './roomdetail/roomdetail.component';
 import { RegisterComponent } from './register/register.component';
 import { HotelComponent } from './hotel/hotel.component';
+import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
-  { path: '', component: LoginComponent},
+  { path: '', redirectTo:'login', component: AppComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'cancelbooking', component: CancelbookingComponent},

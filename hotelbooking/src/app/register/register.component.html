@@ -9,11 +9,11 @@
                 <div class="row py-2 px-2">
                     <div class="col-6">
                         <input type="text" class="form-control" placeholder="FIRSTNAME" [(ngModel)]="fname"
-                            maxlength="50">
+                            maxlength="20">
                     </div>
                     <div class="col-6">
                         <input type="text" class="form-control" placeholder="LASTNAME" [(ngModel)]="lname"
-                            maxlength="50">
+                            maxlength="20">
                     </div>
                 </div>
                 <br>
@@ -26,14 +26,14 @@
                 <div class="row py-2 px-2">
                     <div class="col">
                         <input type="text" class="form-control" placeholder="USERNAME" [(ngModel)]="username"
-                            maxlength="50">
+                            maxlength="20">
                     </div>
                 </div>
                 <br>
                 <div class="row py-2 px-2">
                     <div class="col">
                         <input type="password" class="form-control" placeholder="PASSWORD" [(ngModel)]="password"
-                            maxlength="50">
+                            maxlength="20">
                     </div>
                 </div>
                 <br>
@@ -80,7 +80,7 @@
     </div> -->
     <p-confirmDialog #cd [style]="{width: '50vw'}">
         <ng-template pTemplate="header">
-            <h3>Warning</h3>
+            <h3>Registration</h3>
         </ng-template>
         <ng-template pTemplate="footer">
             <!-- <button type="button" pButton icon="pi pi-times" label="No" (click)="cd.reject()"></button> -->
