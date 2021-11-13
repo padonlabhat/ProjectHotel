@@ -11,24 +11,24 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
-                            <th scope="col">price</th>
-                            <th scope="col">address</th>
-                            <th scope="col">sizeroom</th>
-                            <th scope="col">totalroom</th>
-                            <th scope="col">gmail</th>
-                            <th scope="col">Phone</th>
+                            <th scope="col">Telephone Number</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Number of Days</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Hotel Name</th>
+                            <th scope="col">Hotel Number</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor='let room of _bookinghistoryList; let i = index;'>
+                        <tr *ngFor='let booking of _bookinghistoryList; let i = index;'>
                             <td>{{i+1}}</td>
-                            <td>{{room.name}}</td>
-                            <td>{{room.price}}</td>
-                            <td>{{room.address}}</td>
-                            <td>{{room.sizeroom}}</td>
-                            <td>{{room.totalroom}}</td>
-                            <td>{{room.gmail}}</td>
-                            <td>{{room.phone}}</td>
+                            <td>{{booking.nameU}}</td>
+                            <td>{{booking.tel}}</td>
+                            <td>{{booking.email}}</td>
+                            <td>{{booking.dayNumb}}</td>
+                            <td>{{booking.priceAll}}</td>
+                            <td>{{booking.nameHo}}</td>
+                            <td>{{booking.telHo}}</td>
                         </tr>
                     </tbody>
                 </table>

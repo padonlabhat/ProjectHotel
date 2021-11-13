@@ -6,28 +6,28 @@ import { AngularFireDatabase } from 'angularfire2/database';
   styleUrls: ['./bookinghistory.component.css']
 })
 export class BookinghistoryComponent implements OnInit {
-  public _id!:string;
+  public _id!:number;
   public _bookinghistoryList!: Bookinghistory[];
 
   constructor(private db : AngularFireDatabase) { 
-    this.db.object('room/0').set({id : '1',name : 'namehotel'})
+    this.db.object('booking/0').set({id : '1',name : 'namehotel'})
     this.getStarted();
   }
 
   ngOnInit() {   }
 
   async getStarted(){
-    var room: Bookinghistory[];
+    var booking: Bookinghistory[];
     await this. getBookinghistoryDB().then(value => {
-      room = value as Bookinghistory[];
-     this._bookinghistoryList = room;
+      booking = value as Bookinghistory[];
+     this._bookinghistoryList = booking;
     });
     this._id = this._bookinghistoryList[this._bookinghistoryList.length-1].id +1
   }
 
   getBookinghistoryDB(){
     return new Promise((resolve, reject)=>{
-     this.db.list('room').valueChanges().subscribe(value =>{
+     this.db.list('booking').valueChanges().subscribe(value =>{
        resolve(value);
      })
     });
@@ -36,19 +36,12 @@ export class BookinghistoryComponent implements OnInit {
 }
 
 class Bookinghistory {
-  id!:string;
-  name!: string;
-  price!: number;
-  address!: string;
-  sizeroom!: number;
-  totalroom!: number;
-  gmail! : string;
-  phone! : number;
-  WiFi! : any;
-  freebf! :  any;
-  air!: any;
-  pet!: any;
-  parking!: any;
-  pool!: any;
-
+  id!: number;
+  tel!: string;
+  dayNumb!: number;
+  priceAll!: number;
+  nameU!: string;
+  email!: string;
+  nameHo!: string;  
+  telHo!: string;
 }
