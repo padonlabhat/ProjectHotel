@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-
-
-
 @Component({
   selector: 'app-bookinghistory',
   templateUrl: './bookinghistory.component.html',
@@ -11,10 +8,9 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class BookinghistoryComponent implements OnInit {
   public _id!:string;
   public _bookinghistoryList!: Bookinghistory[];
-  // constructor() { }
+
   constructor(private db : AngularFireDatabase) { 
     this.db.object('room/0').set({id : '1',name : 'namehotel'})
-   
     this.getStarted();
   }
 
@@ -26,7 +22,6 @@ export class BookinghistoryComponent implements OnInit {
       room = value as Bookinghistory[];
      this._bookinghistoryList = room;
     });
-    console.log(this._bookinghistoryList)
     this._id = this._bookinghistoryList[this._bookinghistoryList.length-1].id +1
   }
 
