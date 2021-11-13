@@ -1,32 +1,38 @@
-<!-- <div class="container pt-4">
- <h2>ประวัติการจอง</h2>
-</div> -->
-<div class="container">
-
-    <div class="col-12">
-        <h2  class="text-center">ประวัติการจอง</h2> 
-    </div>
-
-
+<html lang="en">
     <div class="container">
-    <!-- <p-orderList [value]="products" [listStyle]="{'max-height':'30rem'}" header="List of Products" filterBy="name" filterPlaceholder="Filter by name" [dragdrop]="true"> -->
-        <p-orderList [listStyle]="{'max-height':'30rem'}" header="List of Products" filterBy="name" filterPlaceholder="Filter by name" [dragdrop]="true">
-            <ng-template let-product pTemplate="item">
-                <div class="product-item">
-                    <div class="image-container">
-                            <img src="assets/showcase/images/demo/product/{{product.image}}" [alt]="product.name" class="product-image" />
-                    </div>
-                    <div class="product-list-detail">
-                        <h5 class="p-mb-2">{{product.name}}</h5>
-                        <i class="pi pi-tag product-category-icon"></i>
-                        <span class="product-category">{{product.category}}</span>
-                    </div>
-                    <div class="product-list-action">
-                        <h6 class="p-mb-2">${{product.price}}</h6>
-                        <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
-                    </div>
-                </div>
-            </ng-template>
-        </p-orderList>
+        <div class="col-12">
+            <h2  class="text-center">ประวัติการจอง</h2> 
+        </div>
+        <div class="col">
+            <div class="card">
+                <h3>My Room</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">price</th>
+                            <th scope="col">address</th>
+                            <th scope="col">sizeroom</th>
+                            <th scope="col">totalroom</th>
+                            <th scope="col">gmail</th>
+                            <th scope="col">Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let room of _bookinghistoryList; let i = index;'>
+                            <td>{{i+1}}</td>
+                            <td>{{room.name}}</td>
+                            <td>{{room.price}}</td>
+                            <td>{{room.address}}</td>
+                            <td>{{room.sizeroom}}</td>
+                            <td>{{room.totalroom}}</td>
+                            <td>{{room.gmail}}</td>
+                            <td>{{room.phone}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div> 
-</div> 
+</html>
