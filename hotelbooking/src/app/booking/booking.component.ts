@@ -31,7 +31,7 @@ export class BookingComponent implements OnInit {
   public _room!: Room[];
 
   constructor(private db: AngularFireDatabase) {
-      //  this.db.object('booking/0').set({id : 0,tel : '0905555555',dayNumb : 10 ,priceAll : 5000, nameU : 'Customer1', email : 'emailcus1@email.com', nameHo : 'Hotel1',telHo : '0361111111'  })
+    //  this.db.object('booking/0').set({id : 0,tel : '0905555555',dayNumb : 10 ,priceAll : 5000, nameU : 'Customer1', email : 'emailcus1@email.com', nameHo : 'Hotel1',telHo : '0361111111'  })
     this.getStartedBooking();
     this.getStartedUser();
     this.getStartedHotel();
@@ -43,7 +43,7 @@ export class BookingComponent implements OnInit {
       booking = value as Booking[];
       this._bookingList = booking;
     });
-    console.log(this._bookingList);
+    // console.log(this._bookingList);
     this._id = this._bookingList[this._bookingList.length - 1].id + 1
   }
   getBookingFromRealtimeDB() {
@@ -60,7 +60,7 @@ export class BookingComponent implements OnInit {
       user = value as User[];
       this._user = user;
     });
-    console.log(this._user)
+    // console.log(this._user)
 
     this._uName = this._user[4].firstname + " " + this._user[4].lastname
     this._email = this._user[4].email
@@ -79,7 +79,7 @@ export class BookingComponent implements OnInit {
       room = value as Room[];
       this._room = room;
     });
-    console.log(this._room)
+    // console.log(this._room)
 
     this._nameHo = this._room[4].name
     this._address = this._room[4].address
@@ -129,7 +129,7 @@ class Booking {
   priceAll!: number;
   nameU!: string;
   email!: string;
-  nameHo!: string;  
+  nameHo!: string;
   telHo!: string;
 }
 
