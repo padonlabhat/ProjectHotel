@@ -1,29 +1,94 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [ConfirmationService]
 })
 export class LoginComponent implements OnInit {
-  form: any;
+  login: any;
+  username!: string;
+  password!: string;
+
+  Check = false;
+
+  public userlist!: User[];
   constructor(
-    fb: FormBuilder,
-    private router: Router
-    ) {
-    this.form = fb.group({
-      username: fb.control('', Validators.required),
-      password: fb.control('', Validators.required)
-    });
+    private router: Router,
+    private db: AngularFireDatabase,
+    private confirmationService: ConfirmationService,
+  ) {
+
   }
 
   ngOnInit(): void {
+    this.getStarted();
+  }
 
+  async getStarted() {
+    var user: User[];
+    await this.getUserFromRealtimeDB().then(value => {
+      user = value as User[];
+      console.log(user);
+      this.userlist = user;
+    });
+    for (let i = 0; i < this.userlist.length; i++) {
+      console.log(this.userlist[i]);
+    }
+  }
+
+  getUserFromRealtimeDB() {
+    return new Promise((resolve, reject) => {
+      this.db.list('login').valueChanges().subscribe(value => {
+        resolve(value);
+      })
+    });
   }
 
   onLogin() {
-    this.router.navigateByUrl('/home')
+    if (this.username && this.password) {
+      var data = {
+        username: this.username,
+        password: this.password,
+      }
+      for (let i = 0; i < this.userlist.length; i++) {
+        // console.log(this.userlist[i].username);
+        // console.log(this.userlist[i].password);
+        if (data.username == this.userlist[i].username && data.password == this.userlist[i].password) {
+          console.log('login');
+          this.Check = true;
+          this.router.navigateByUrl('/home');
+        }
+      }
+      if (this.Check != true) {
+        console.log('failed');
+        this.password = "";
+        this.checkPss();
+      }
+    }
   }
+
+  checkPss() {
+    this.confirmationService.confirm({
+      message: 'Incorrect username or password.',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        console.log('Please check password');
+      }
+    });
+  }
+
+}
+class User {
+  fname!: string;
+  lname!: string;
+  email!: string;
+  username!: string;
+  password!: string;
+  id!: number;
 }

@@ -47,8 +47,9 @@
     box-sizing: border-box;
     }
 
-    .imgs{
-      width: 300;
-      height: 250;
-    }
     
+    .imgs { 
+      text-align: center;
+      } .banner-image { 
+      display: inline-block; 
+      }
