@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
     });
     console.log(this.userlist);
     
-    this._id = this.userlist[this.userlist.length-1].id +1
+    this._id = this.userlist[this.userlist.length-1].uid +1
   }
 
   async addUser() {
@@ -137,5 +137,5 @@ class User {
   email!: string;
   username!: string;
   password!: string;
-  id!: number;
+  uid!: number;
 }

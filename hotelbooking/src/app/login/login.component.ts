@@ -2,14 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { ConfirmationService } from 'primeng/api';
+import { LoginService } from '../service/login.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [ConfirmationService]
+  providers: [ConfirmationService],
 })
 export class LoginComponent implements OnInit {
+  userData: any;
+  userUID: any;
+  userJson: any;
+
   login: any;
   username!: string;
   password!: string;
@@ -21,6 +27,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private db: AngularFireDatabase,
     private confirmationService: ConfirmationService,
+    private loginService: LoginService,
+    private http: HttpClient,
   ) {
 
   }
@@ -61,7 +69,10 @@ export class LoginComponent implements OnInit {
         if (data.username == this.userlist[i].username && data.password == this.userlist[i].password) {
           console.log('login');
           this.Check = true;
+          this.userUID = this.userlist[i].uid //uid
+          this.userData = this.userlist[i]; //all userdata
           this.router.navigateByUrl('/home');
+
         }
       }
       if (this.Check != true) {
@@ -90,5 +101,5 @@ class User {
   email!: string;
   username!: string;
   password!: string;
-  id!: number;
+  uid!: number;
 }
