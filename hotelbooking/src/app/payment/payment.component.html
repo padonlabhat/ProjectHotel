@@ -85,38 +85,7 @@
                         </div>
                        
                     </div>
-                        </div>
-                            <span class="p-ml-2">{{_name}}</span>
-                            <span class="p-ml-2">{{_number}}</span>
-                            <span class="p-ml-2">{{_expiry}}</span>
-                            <span class="p-ml-2">{{_cvv}}</span>
                        
-                            <table class="table">
-                            <thead>
-                                <tr>
-                                <th scope="col">#</th>
-                          
-                                <th scope="col">Name</th>
-                                <th scope="col">Number</th>
-                                <th scope="col">expiry</th>
-                                <th scope="col">cvv</th>
-                              
-                                </tr>
-                            </thead>
-                            <tbody>
-                            
-                                <tr *ngFor='let payment of _paymentList; let i = index;'>
-                                    <td>{{i+1}}</td>
-                               
-                                    <td>{{payment.name}}</td>
-                                    <td>{{payment.number}}</td>
-                                    <td>{{payment.expiry}}</td>
-                                    <td>{{payment.cvv}}</td>
-                                    
-                                </tr>
-                            </tbody>
-                            </table>
-                           
 
     
     
