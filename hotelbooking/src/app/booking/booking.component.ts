@@ -24,14 +24,14 @@ export class BookingComponent implements OnInit {
   public _nameHo!: string;
   public _address!: string;
   public _price!: number;
-  public _telHo!: number;
+  public _telHo!: string;
 
   public _bookingList!: Booking[];
   public _user!: User[];
   public _room!: Room[];
 
   constructor(private db: AngularFireDatabase) {
-    //  this.db.object('booking/0').set({id : 0,tel : '0905555555',dayNumb : '10' ,priceAll : '5000'})
+      //  this.db.object('booking/0').set({id : 0,tel : '0905555555',dayNumb : 10 ,priceAll : 5000, nameU : 'Customer1', email : 'emailcus1@email.com', nameHo : 'Hotel1',telHo : '0361111111'  })
     this.getStartedBooking();
     this.getStartedUser();
     this.getStartedHotel();
@@ -108,7 +108,11 @@ export class BookingComponent implements OnInit {
       dayNumb: this._dayNumb,
       // dayIn: this._dayIn,
       // dayOut: this._dayOut,
-      priceAll: this._priceAll
+      priceAll: this._priceAll,
+      nameU: this._uName,
+      email: this._email,
+      nameHo: this._nameHo,
+      telHo: this._telHo
     }
     await this.db.object('booking/' + (String(this._id))).set(data);
     await this.getStartedBooking();
@@ -123,6 +127,10 @@ class Booking {
   // dayOut!: string;
   dayNumb!: number;
   priceAll!: number;
+  nameU!: string;
+  email!: string;
+  nameHo!: string;  
+  telHo!: string;
 }
 
 class User {
@@ -137,5 +145,5 @@ class Room {
   address!: string;
   price!: number;
   id!: number;
-  phone!: number;
+  phone!: string;
 }
