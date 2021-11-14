@@ -11,6 +11,10 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 export class BookingComponent implements OnInit {
 
+  public idName!: number;
+  public idTest!: number;
+  public idHotel!: number;
+
   public _id!: number;
   public _tel!: string;
   public _dayNumb!: number;
@@ -61,9 +65,10 @@ export class BookingComponent implements OnInit {
       this._user = user;
     });
     // console.log(this._user)
-
-    this._uName = this._user[4].firstname + " " + this._user[4].lastname
-    this._email = this._user[4].email
+    this.idTest = 4;
+    this.idName = this.idTest;
+    this._uName = this._user[this.idName].firstname + " " + this._user[this.idName].lastname
+    this._email = this._user[this.idName].email
   }
   getUserFromRealtimeDB() {
     return new Promise((resolve, reject) => {
@@ -80,11 +85,12 @@ export class BookingComponent implements OnInit {
       this._room = room;
     });
     // console.log(this._room)
-
-    this._nameHo = this._room[4].name
-    this._address = this._room[4].address
-    this._telHo = this._room[4].phone
-    this._price = this._room[4].price
+    this.idTest = 4;
+    this.idHotel = this.idTest;
+    this._nameHo = this._room[this.idHotel].name
+    this._address = this._room[this.idHotel].address
+    this._telHo = this._room[this.idHotel].phone
+    this._price = this._room[this.idHotel].price
   }
   getHotelFromRealtimeDB() {
     return new Promise((resolve, reject) => {
