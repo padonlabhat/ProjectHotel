@@ -1,6 +1,6 @@
 <div class="container-fluid  py-5">
     <div class="row d-flex justify-content-center ">
-        <div class="col-xl-7 col-lg-7 col-md-9 col-sm-11 ">
+        <div class="col-xl-6 col-lg-6col-md-9 col-sm-12 ">
             <div class="card border-0">
                 <div class="row">
                         <div class="col">
@@ -10,21 +10,24 @@
                       
                 </div>
                 <div class="row">
-                    <div class="col-sm-7 border-line pb-3">
+                    <div class="col-sm-6 border-line pb-3">
                         <div class="form-group">
-                            <p class="text-muted text-sm mb-0">Name on the card</p>
-
-                              <input type="text" placeholder="Name" size="20" pInputText [(ngModel)]='_name'> 
+                            
+                                <span class="p-float-label">
+                                <input type="text" id="namecard" pInputText [(ngModel)]="_name"> 
+                                <label for="inputtext">Name on the card</label>
+                            </span>
+                     
                         </div>
 
 
 
                         <div class="form-group">
-                            <p class="text-muted text-sm mb-0">Card Number</p>
+                            <p class="text-muted text-sm mb-0 pt-2">Card Number</p>
                             <div class="row"> 
                             <div class="col">
-                               
-                               <input type="Number" placeholder="0000 0000 0000 0000" size="19" minlength="16" maxlength="16" pInputText [(ngModel)]='_number'> 
+                                <p-inputMask mask="9999 9999 9999 9999" [(ngModel)]="_number"  placeholder="0000 0000 0000 0000"></p-inputMask>
+                              
     
                            /<img class="image ml-1" src="https://i.imgur.com/WIAP9Ku.jpg">
                             </div>
@@ -32,23 +35,24 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <p class="text-muted text-sm mb-0">Expiry date</p> 
-                            <input type="Number" placeholder="MM/YY" size="6" minlength="5" maxlength="5" pInputText [(ngModel)]='_expiry'>
+                            <p class="text-muted text-sm mb-0 pt-2">Expiry date</p> 
+                              <p-inputMask mask="99/99" [(ngModel)]="_expiry"  placeholder="MM/YY" ></p-inputMask>
+                
                         </div>
                         <div class="form-group">
-                            <p class="text-muted text-sm mb-0">CVV/CVC</p> 
-                            <input type="password"  placeholder="000" size="1" minlength="3" maxlength="3" pInputText [(ngModel)]='_cvv'>
+                            <p class="text-muted text-sm mb-0 pt-2">CVV/CVC</p> 
+                            <p-inputMask mask="999" [(ngModel)]="_cvv"  placeholder="000"   ></p-inputMask>
+            
                         </div>
                         
                     </div>
-                    <div class="col-sm-5 text-sm-center justify-content-center pb-4"> 
+                    <div class="col-sm-6 text-sm-center justify-content-center pb-4"> 
                    
                     <small class="text-sm text-muted">Order number</small>
-                         <div class="p-inputgroup">
-                            <input type="text" pInputText placeholder="000000" >   
-                            <button type="button" pButton pRipple icon="pi pi-angle-double-right" ></button>      
-                        </div>
-                        
+                    <div class="p-grid p-fluid">
+                    
+    
+   
                         <small class="text-sm text-muted">Payment amount</small>
                         <div class="row px-3 justify-content-sm-center">
                               

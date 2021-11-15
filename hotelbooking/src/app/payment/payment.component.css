@@ -37,18 +37,7 @@
     color: grey
 }
 
-input {
-    padding: 2px 0px;
-    border: none;
-    border-bottom: 1px solid lightgrey;
-    margin-bottom: 5px;
-    margin-top: 2px;
-    box-sizing: border-box;
-    color: #000;
-    font-size: 16px;
-    letter-spacing: 1px;
-    font-weight: 500
-}
+
 
 input:focus {
     -moz-box-shadow: none !important;
@@ -75,4 +64,14 @@ button:focus {
         border-right: none;
         border-bottom: 1px solid #EEEEEE
     }
+}
+
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
 }

@@ -17,9 +17,9 @@ import {CrudService} from '../service/crud.service';
 export class PaymentComponent implements OnInit {
 
   public _name!: string;
-  public _number!: number;
-  public _expiry!: number;
-  public _cvv!: number;
+  public _number!: string;
+  public _expiry!: string;
+  public _cvv!: string;
   public _id!: number;
 
   public _paymentList!: Payment[];
@@ -103,9 +103,9 @@ clear() {
 
 class Payment {
   name!: string;
-  number!: number;
-  expiry!: number;
-  cvv!: number;
+  number!: string;
+  expiry!: string;
+  cvv!: string;
   id!: number;
 
 }
