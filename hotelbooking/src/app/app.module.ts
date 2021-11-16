@@ -41,7 +41,10 @@ import { CrudService } from './service/crud.service';
 import { InputMaskModule } from 'primeng/inputmask'; //add phone namder
 import {KeyFilterModule} from 'primeng/keyfilter'; //add gmail
 import { ConfirmDialogModule } from 'primeng/confirmdialog'; //Use in login and register
-import {InputNumberModule} from 'primeng/inputnumber';//hotel
+import {InputNumberModule} from 'primeng/inputnumber';
+import { HeaderComponent } from './header/header.component';
+import { HeaderhotelComponent } from './headerhotel/headerhotel.component';
+import { DashboardComponent } from './dashboard/dashboard.component';//hotel
 
 
 @NgModule({
@@ -58,6 +61,9 @@ import {InputNumberModule} from 'primeng/inputnumber';//hotel
     BookinghistoryComponent,
     HomeComponent,
     RegisterComponent,
+    HeaderComponent,
+    HeaderhotelComponent,
+    DashboardComponent,
     
   ],
   imports: [

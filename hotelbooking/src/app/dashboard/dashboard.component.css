@@ -1,0 +1,77 @@
+
+.card {
+    padding: 30px 25px 35px 50px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 8px 0px #0d6efd;
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+.border-line {
+    border-right: 1px solid #BDBDBD
+}
+
+.text-sm {
+    font-size: 13px
+}
+
+.text-md {
+    font-size: 18px
+}
+
+.image {
+    width: 60px;
+    height: 30px
+}
+
+::placeholder {
+    color: grey;
+    opacity: 1
+}
+
+:-ms-input-placeholder {
+    color: grey
+}
+
+::-ms-input-placeholder {
+    color: grey
+}
+
+
+
+input:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #0d6efd;
+    outline-width: 0
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #0d6efd
+}
+
+@media screen and (max-width: 575px) {
+    .border-line {
+        border-right: none;
+        border-bottom: 1px solid #EEEEEE
+    }
+}
+
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}

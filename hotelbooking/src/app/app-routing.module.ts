@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { AppComponent } from './app.component';
+import { HeaderhotelComponent } from './headerhotel/headerhotel.component';
+import { HeaderComponent } from './header/header.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -25,6 +28,9 @@ const routes: Routes = [
   { path: 'bookinghistory', component: BookinghistoryComponent},
   { path: 'home', component: HomeComponent},
   { path: 'hotel', component: HotelComponent},
+  { path: 'headerhotel', component: HeaderhotelComponent},
+  { path: 'heade', component: HeaderComponent},
+  { path: 'dashboard', component: DashboardComponent},
 
 ];
 
