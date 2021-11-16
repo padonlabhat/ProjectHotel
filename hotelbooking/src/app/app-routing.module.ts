@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { HeaderhotelComponent } from './headerhotel/headerhotel.component';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'headerhotel', component: HeaderhotelComponent},
   { path: 'heade', component: HeaderComponent},
   { path: 'dashboard', component: DashboardComponent},
+  { path: 'footer', component: FooterComponent},
 
 ];
 

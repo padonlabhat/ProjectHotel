@@ -44,8 +44,10 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog'; //Use in login and 
 import {InputNumberModule} from 'primeng/inputnumber';
 import { HeaderComponent } from './header/header.component';
 import { HeaderhotelComponent } from './headerhotel/headerhotel.component';
-import { DashboardComponent } from './dashboard/dashboard.component';//hotel
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FooterComponent } from './footer/footer.component';//hotel
 
+import {GMapModule} from 'primeng/gmap'; //hotel
 
 @NgModule({
   declarations: [
@@ -64,6 +66,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';//hotel
     HeaderComponent,
     HeaderhotelComponent,
     DashboardComponent,
+    FooterComponent,
     
   ],
   imports: [
@@ -88,7 +91,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';//hotel
     KeyFilterModule,
     ToastModule,
     ConfirmDialogModule,
-    InputNumberModule
+    InputNumberModule,
+    GMapModule
    
 
   ],
