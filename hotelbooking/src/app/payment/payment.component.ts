@@ -21,10 +21,29 @@ export class PaymentComponent implements OnInit {
   public _expiry!: string;
   public _cvv!: string;
   public _id!: number;
-
+  Check = false;
   public _paymentList!: Payment[];
 
-
+  submitpayment() {
+    if (this._name && this._number&&this._expiry&&this._cvv) {
+      var data = {
+            name: this._name,
+            number: this._number,
+            expiry:this._expiry,
+            cvv: this._cvv
+      }
+      for (let i = 0; i < this._paymentList.length; i++) {
+        if (data.name == this._paymentList[i].name && data.number == this._paymentList[i].number&& data.expiry == this._paymentList[i].expiry&& data.cvv == this._paymentList[i].cvv) {
+          console.log('suscess');
+          this.Check = true;
+        }
+      }
+      if (this.Check != true) {
+        console.log('failed');
+        this.showError();
+      }else{this.showSuccess();}
+    }
+  }
 
 
   constructor(private db : AngularFireDatabase,private messageService: MessageService, private primengConfig: PrimeNGConfig) { 
@@ -66,10 +85,7 @@ export class PaymentComponent implements OnInit {
   await this.getStarted();
   this.clearFields();
  }
- async submitpayment(){
-  this.showSuccess();
-
- }
+ 
 clearFields(){
     this._name = '';
 
@@ -83,10 +99,10 @@ clearFields(){
   }
 
 showSuccess() {
-    this.messageService.add({key: 'tc',severity:'success', summary: 'Success', detail: 'Message Content'});
+    this.messageService.add({key: 'bc',severity:'success', summary: 'Success', detail: 'Message Content'});
 }
 showError() {
-  this.messageService.add({severity:'error', summary: 'Error', detail: 'Message Content'});
+  this.messageService.add({key: 'bc',severity:'error', summary: 'Error', detail: 'Message Content'});
 }
 onConfirm() {
   this.messageService.clear('c');
