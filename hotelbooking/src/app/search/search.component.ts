@@ -5,6 +5,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { MessageService } from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
 import { CrudService } from '../service/crud.service';
+import { room } from '../service/room';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -13,32 +14,10 @@ import { CrudService } from '../service/crud.service';
 })
 export class SearchComponent implements OnInit {
 
-
-  public roomN!: string;
-  public roomID!: number;
-  public price!: number;
-  public description!: String;
-  public fileUpload!: any;
   term: any;
   public search!: search[];
-  public userProfileImg: any;
-  public _id!: number;
-  public _name!: string;
-  public _price!: number;
-  public _address!: string;
-  public _sizeroom!: number;
-  public _totalroom!: number;
-  public _gmail!: string;
-  public _phone!: number;
-  public _WiFi!: any;
-  public _freebf!: any;
-  public _air!: any;
-  public _pet!: any;
-  public _parking!: any;
-  public _pool!: any;
 
   constructor(private db: AngularFireDatabase,
-    private messageService: MessageService,
     private primengConfig: PrimeNGConfig,
     public crudservice: CrudService) {
 
@@ -60,7 +39,6 @@ export class SearchComponent implements OnInit {
     });
     console.log(this.search)
   }
-
   getroomDB() {
     return new Promise((resolve, reject) => {
       this.db.list('room').valueChanges().subscribe(value => {
@@ -69,42 +47,17 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  showSuccess() {
-    this.messageService.add({ key: 'tc', severity: 'success', summary: 'Success', detail: 'Message Content' });
+  addToCart(search: room) {
+    this.crudservice.addToCart(search);
+    window.alert('Your Hotel has been added to the list!');
   }
-  showError() {
-    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Message Content' });
-  }
-  onConfirm() {
-    this.messageService.clear('c');
-  }
-
-  onReject() {
-    this.messageService.clear('c');
-  }
-
-  clear() {
-    this.messageService.clear();
-  }
-
 }
 class search {
-  roomN!: string;
-  roomID!: number;
-  price!: number;
-  description!: string;
+ 
   _id!: number;
   _name!: string;
   _price!: number;
   _address!: string;
   _sizeroom!: number;
   _totalroom!: number;
-  _gmail!: string;
-  _phone!: number;
-  _WiFi!: any;
-  _freebf!: any;
-  _air!: any;
-  _pet!: any;
-  _parking!: any;
-  _pool!: any;
 }

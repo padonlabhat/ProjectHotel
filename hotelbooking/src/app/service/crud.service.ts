@@ -1,48 +1,35 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from 'angularfire2/firestore';
+import { room } from './room';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CrudService {
-  items: search[] = [];
+  items: room[] = [];
   constructor(public fireservices:AngularFirestore,private http: HttpClient) { }
 
-  create_Newemployee(Record:string)
-  {
-    return this.fireservices.collection('Employee').add(Record);
-  }
-
-  get_Allemployee()
-  {
-    return this.fireservices.collection('Employee').snapshotChanges();
-  }
-
-  update_employee(recordid:number, record:string)
-  {
-    this.fireservices.doc('Employee/' + recordid).update(record);
-  }
-
-  delete_employee(record_id:number)
-  {
-    this.fireservices.doc('Employee/' + record_id).delete();
-  }
-
-  create_NewUsername(record:string)
-  {
-    return this.fireservices.collection('login').add(record);
-  }
-
-
   
-  addToCart(search:string)
-  {
-    return this.fireservices.collection('Booking').add(search);
+
+  getItems() {
+    return this.items;
   }
+
+  addToCart(search: room) {
+    this.items.push(search);
+  }
+  clearCart() {
+    this.items = [];
+    return this.items;
+  }
+  getShippingPrices() {
+    return this.http.get<{type: string, price: number}[]>('/assets/shipping.json');
+  }
+
+
+
 }
-
-
 export interface search {
   roomN: string;
   roomID: string;
