@@ -8,7 +8,6 @@ import { SearchComponent } from './search/search.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { BookinghistoryComponent } from './bookinghistory/bookinghistory.component';
 import { HomeComponent } from './home/home.component';
-import { RoomdetailComponent } from './roomdetail/roomdetail.component';
 import { RegisterComponent } from './register/register.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { AppComponent } from './app.component';
@@ -25,7 +24,6 @@ const routes: Routes = [
   { path: 'receipt', component: ReceiptComponent},
   { path: 'bookinghistory', component: BookinghistoryComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'roomdetail', component: RoomdetailComponent},
   { path: 'hotel', component: HotelComponent},
 
 ];
