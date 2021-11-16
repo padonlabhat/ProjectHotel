@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
           this.Check = true;
           this.userUID = this.userlist[i].uid //uid
           this.userData = this.userlist[i]; //all userdata
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/dashboard');
 
         }
       }
