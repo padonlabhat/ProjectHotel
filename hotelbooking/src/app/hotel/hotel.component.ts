@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase} from 'angularfire2/database';
 
+
+
 @Component({
   selector: 'app-hotel',
   templateUrl: './hotel.component.html',
@@ -25,19 +27,21 @@ export class HotelComponent implements OnInit {
   public _id!:string;
   public _name!: string;
   public _price!: number;
-  public _address!: string;
+
   public _sizeroom!: number;
   public _totalroom!: number;
-  public _gmail! : string;
-  public _phone! : number;
-  public _WiFi! : any;
-  public _freebf! :  any;
-  public _air!: any;
-  public _pet!: any;
-  public _parking!: any;
-  public _pool!: any;
-
   public _roomList!: Room[];
+  // public _address!: string;
+ // public _gmail! : string;
+ // public _phone! : number;
+  //public _WiFi! : any;
+  //public _freebf! :  any;
+ // public _air!: any;
+ // public _pet!: any;
+ // public _parking!: any;
+ // public _pool!: any;
+
+  
 
 
   
@@ -71,11 +75,11 @@ export class HotelComponent implements OnInit {
        name: this._name,
        id: this._id,
        price:this._price,
-       address: this._address,
        sizeroom: this._sizeroom,
        totalroom: this._totalroom,
-       gmail :this._gmail,
-       phone : this._phone,
+       //   address: this._address,
+    //   gmail :this._gmail,
+    //   phone : this._phone,
       //  WiFi : this._WiFi,
       //  freebf :this._freebf,
       //  air:this._air,
@@ -103,15 +107,17 @@ class Room {
   id!:string;
   name!: string;
   price!: number;
-  address!: string;
+  //address!: string;
   sizeroom!: number;
   totalroom!: number;
-  gmail! : string;
-  phone! : number;
-  WiFi! : any;
-  freebf! :  any;
-  air!: any;
-  pet!: any;
-  parking!: any;
-  pool!: any;
+  //gmail! : string;
+  //phone! : number;
+  //WiFi! : any;
+  //freebf! :  any;
+  //air!: any;
+  //pet!: any;
+ // parking!: any;
+ // pool!: any;
 }
+
+
