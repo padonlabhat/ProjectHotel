@@ -18,8 +18,8 @@ export class BookingComponent implements OnInit {
   public _id!: number;
   public _tel!: string;
   public _dayNumb!: number;
-  // public _dayIn!: string;
-  // public _dayOut!: string;
+  public _dayIn!: string;
+  public _dayOut!: string;
   public _priceAll!: number;
 
   public _uName!: string;
@@ -65,10 +65,10 @@ export class BookingComponent implements OnInit {
       this._user = user;
     });
     // console.log(this._user)
-    this.idTest = 4;
-    this.idName = this.idTest;
-    this._uName = this._user[this.idName].firstname + " " + this._user[this.idName].lastname
-    this._email = this._user[this.idName].email
+    // this.idTest = 4;
+    // this.idName = this.idTest;
+    // this._uName = this._user[this.idName].firstname + " " + this._user[this.idName].lastname
+    // this._email = this._user[this.idName].email
   }
   getUserFromRealtimeDB() {
     return new Promise((resolve, reject) => {
@@ -101,7 +101,9 @@ export class BookingComponent implements OnInit {
   }
 
   async calculator() {
-    this._priceAll = this._price * this._dayNumb
+    var diff = Date.parse(this._dayOut) - Date.parse(this._dayIn);
+    this._dayNumb = Math.floor(diff / 86400000);
+    this._priceAll = this._price * this._dayNumb;
   }
 
   ngOnInit() {
@@ -112,8 +114,8 @@ export class BookingComponent implements OnInit {
       id: this._id,
       tel: this._tel,
       dayNumb: this._dayNumb,
-      // dayIn: this._dayIn,
-      // dayOut: this._dayOut,
+      dayIn: this._dayIn,
+      dayOut: this._dayOut,
       priceAll: this._priceAll,
       nameU: this._uName,
       email: this._email,
@@ -128,10 +130,9 @@ export class BookingComponent implements OnInit {
 class Booking {
   id!: number;
   tel!: string;
-  // dayNumb!: number;
-  // dayIn!: string;
-  // dayOut!: string;
   dayNumb!: number;
+  dayIn!: string;
+  dayOut!: string;
   priceAll!: number;
   nameU!: string;
   email!: string;

@@ -4,70 +4,73 @@
         <div class="col-xl-9 col-lg-9 col-md-9 col-sm-11 ">
             <div class="card border-0">
                 <div class="col-12">
-                    <h2 class="text-center">ข้อมูลผู้เข้าพักและรายละเอียดการจอง</h2><br>
+                    <h2 class="text-center">Customer information and Booking details</h2><br>
                 </div>
 
                 <div class="row pt-3">
                     <div class="col-md-6 col-12">
+                        <h5 class="text-center">
+                            Customer Parts
+                        </h5>
+                        <div class="row pt-2"></div>
                         <div class="row pt-2">
                             <div class="col-4">
-                                <!-- <h5>ชื่อ-นามสกุล : </h5> -->
-                                <p class="text-md mb-2">ชื่อ-นามสกุล : </p>
+                                <p class="text-md mb-2">Name - Surname : </p>
                             </div>
                             <div class="col-8">
-                                <!-- <input disabled="" data-element-name="name" pInputText autocomplete="name" value=""> -->
-                                <input type="text" class="from-control" [(ngModel)]="_uName" pInputText disabled>
+                                <input type="text" class="from-control" [(ngModel)]="_uName" pInputText size="30">
                             </div>
                         </div>
-                        <!-- <div class="form-group">
-                        <p class="text-muted text-sm mb-0">Name on the card</p>
 
-                        <input type="text" placeholder="Name"  pInputText [(ngModel)]='_tel'>
-                    </div> -->
                         <div class="row pt-2">
                             <div class="col-4">
-                                <!-- <h5>E-mail : </h5> -->
                                 <p class="text-md mb-2">E-mail :</p>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="from-control" [(ngModel)]="_email" pInputText disabled>
+                                <input type="text" class="from-control" [(ngModel)]="_email" pInputText size="30">
                             </div>
                         </div>
                         <div class="row pt-2">
                             <div class="col-4">
-                                <!-- <h5>เบอร์โทรศัพท์ : </h5> -->
-                                <p class="text-md mb-2">เบอร์โทรศัพท์ :</p>
+                                <p class="text-md mb-2">Telephone Number :</p>
                             </div>
                             <div class="col-8">
-                                <!-- <input type="number" placeholder="099-9999999" pInputText [(ngModel)]='_tel'> -->
-                                <input type="text" class="from-control" [(ngModel)]="_tel" pInputText maxlength="10">
+                                <input type="text" class="from-control" [(ngModel)]="_tel" pInputText maxlength="10"
+                                    size="30">
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-6 col-12">
+                        <h5 class="text-center">
+                            Hotel Parts
+                        </h5>
+                        <div class="row pt-2"></div>
                         <div class="row pt-2">
                             <div class="col-4">
-                                <!-- <h5>ชื่อโรงแรม : </h5> -->
-                                <p class="text-md mb-2">ชื่อโรงแรม :</p>
+                                <p class="text-md mb-2">Hotel Name :</p>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="from-control" [(ngModel)]="_nameHo" pInputText disabled>
+                                <input type="text" class="from-control" [(ngModel)]="_nameHo" pInputText disabled
+                                    size="30">
                             </div>
                         </div>
                         <div class="row pt-2">
                             <div class="col-4">
-                                <p class="text-md mb-2">ที่อยู่โรงแรม :</p>
+                                <p class="text-md mb-2">Hotel Address :</p>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="from-control" [(ngModel)]="_address" pInputText disabled>
+                                <input type="text" class="from-control" [(ngModel)]="_address" pInputText disabled
+                                    size="30">
                             </div>
                         </div>
                         <div class="row pt-2">
                             <div class="col-4">
-                                <p class="text-md mb-2">เบอร์โทรโรงแรม :</p>
+                                <p class="text-md mb-2">Hotel Tel. :</p>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="from-control" [(ngModel)]="_telHo" pInputText disabled>
+                                <input type="text" class="from-control" [(ngModel)]="_telHo" pInputText disabled
+                                    size="30">
                             </div>
                         </div>
                     </div>
@@ -75,83 +78,67 @@
 
                 <div class="row pt-3">
                     <div class="col-md-6 col-12">
-                        <!-- <div class="row pt-2">
-                        <div class="col-4">
-                            <p class="text-md mb-2">วันที่จองวันแรก :</p>
-
-                        </div>
-                        <div class="col-8">
-                            <input disabled="" value="">
-                        </div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-4">
-                            <p class="text-md mb-2">วันที่จองวันสุดท้าย :</p>
-                        </div>
-                        <div class="col-8">
-                            <input disabled="" value="">
-                        </div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-4">
-                            <p class="text-md mb-2">รูปแบบห้อง :</p>
-                        </div>
-                        <div class="col-8">
-                            <input disabled="" value="">
-                        </div>
-                    </div> -->
                         <div class="row pt-2">
                             <div class="col-4">
-                                <p class="text-md mb-2">เข้าพักจำนวน :</p>
+                                <p class="text-md mb-2">Check-In Date :</p>
                             </div>
-                            <div class="col-6">
-                                <input type="number" [(ngModel)]="_dayNumb" pInputText>
-                            </div>
-                            <div class="col-2">
-                                <p class="text-md mb-2">วัน</p>
+                            <div class="col-8">
+                                <input type="date" class="from-control" [(ngModel)]="_dayIn" pInputText>
                             </div>
                         </div>
                         <div class="row pt-2">
-                            <div class="col-5"></div>
-                            <div class="col-7">
-                                <button pButton pRipple type="button" (click)='calculator()' [disabled]="!_dayNumb"
-                                    label="ยืนยัน" class="p-button-rounded"></button>
+                            <div class="col-4">
+                                <p class="text-md mb-2">Check-Out Date :</p>
+                            </div>
+                            <div class="col-8">
+                                <input type="date" class="from-control" [(ngModel)]="_dayOut" pInputText>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div align="center">
+                                <button pButton pRipple type="button" (click)="calculator()"
+                                    [disabled]="!_dayIn||!_dayOut" label="Confirm Date"
+                                    class="p-button-rounded"></button>
                             </div>
                         </div>
 
                     </div>
+
                     <div class="col-md-6 col-12">
                         <div class="row pt-2">
                             <div class="col-4">
-                                <p class="text-md mb-2">ราคาที่พัก/คืน :</p>
+                                <p class="text-md mb-2">Price per Night :</p>
                             </div>
-                            <div class="col-6">
-                                <input type="text" class="from-control" [(ngModel)]="_price" pInputText disabled>
+                            <div class="col-4">
+                                <input type="text" class="from-control" style="text-align:center" [(ngModel)]="_price"
+                                    pInputText disabled>
                             </div>
                             <div class="col-2">
-                                <p class="text-md mb-2">บาท</p>
+                                <p class="text-md mb-2">Bath</p>
                             </div>
                         </div>
-                        <!-- <div class="row pt-2">
-                        <div class="col-4">
-                            <p class="text-md mb-2">เข้าพักจำนวน :</p>
-                        </div>
-                        <div class="col-6">
-                            <input disabled="" value="">
-                        </div>
-                        <div class="col-2">
-                            <p class="text-md mb-2">วัน</p>
-                        </div>
-                    </div> -->
                         <div class="row pt-2">
                             <div class="col-4">
-                                <p class="text-md mb-2">ราคารวมทั้งสิ้น</p>
+                                <p class="text-md mb-2">Number of Day :</p>
                             </div>
-                            <div class="col-6">
-                                <input type="number" [(ngModel)]="_priceAll" pInputText disabled>
+                            <div class="col-4">
+                                <input type="number" class="from-control" style="text-align:center"
+                                    [(ngModel)]="_dayNumb" pInputText disabled>
                             </div>
                             <div class="col-2">
-                                <p class="text-md mb-2">บาท</p>
+                                <p class="text-md mb-2">Night</p>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <p class="text-md mb-2">Total Price :</p>
+                            </div>
+                            <div class="col-4">
+                                <input type="number" class="from-control" style="text-align:center"
+                                    [(ngModel)]="_priceAll" pInputText disabled>
+                            </div>
+                            <div class="col-2">
+                                <p class="text-md mb-2">Bath</p>
                             </div>
                         </div>
                     </div>
@@ -159,34 +146,37 @@
 
                 <div class="row footer p-5">
                     <div class="col-12">
-                        <h2 class="text-center">
-                            โปรดทำการชำระเงินในหน้าต่อไป เพื่อยืนยันการจองที่พัก
-                        </h2>
+                        <h4 class="text-center">
+                            Please make payment on the next page. To confirm your booking.
+                        </h4>
+                        <div class="row pt-2"></div>
                         <div align="center">
                             <img src="assets/img/hotel2.jfif" width="500" height="450" class="img-fluid  rounded" />
                         </div>
                     </div>
                 </div>
+
                 <div class="row pt-3">
-                    <button pButton pRipple type="button" label="Confirm" class="p-button-rounded p-button-primary"
-                        data-bs-toggle="modal" data-bs-target="#confirmModal"></button>
+                    <button pButton pRipple type="button" label="Confirm Booking" class="p-button-rounded p-button-primary"
+                        data-bs-toggle="modal" data-bs-target="#confirmModal"
+                        [disabled]="!_uName||!_email||!_tel||!_dayIn||!_dayOut||!_priceAll"></button>
                     <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="confirmModalLabel">ชำระเงิน</h5>
+                                    <h5 class="modal-title" id="confirmModalLabel">Payment</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    โปรดเลือกประเภทการชำระเงิน
+                                    Confirm your Booking Information?
                                 </div>
                                 <div class="modal-footer">
-                                    <a type="button" class="btn btn-secondary" (click)="addBooking()"
-                                        href="home">ชำระเงินภายหลัง</a>
+                                    <a type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                        aria-label="Close">Continue Editing </a>
                                     <a type="button" class="btn btn-primary" (click)="addBooking()"
-                                        href="payment">ชำระเงินเลย</a>
+                                        href="payment">Confirm Information</a>
                                 </div>
                             </div>
                         </div>
