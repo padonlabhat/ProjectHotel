@@ -6,17 +6,13 @@
                 <div class="col-12">
                     <h2 class="text-center">Customer information and Booking details</h2><br>
                 </div>
-<!-- // -->
 
-  
-<div *ngFor="let item of items">
-    <span>{{ item._id }} </span>
-    <span>{{ item._name}}</span>
-    <span> {{ item._price}}</span>
-  </div>
-  
+                <!-- <div *ngFor="let item of items">
+                    <span>{{ item._id }} </span>
+                    <span>{{ item._name}}</span>
+                    <span> {{ item._price}}</span>
+                </div> -->
 
-<!-- // -->
                 <div class="row pt-3">
                     <div class="col-md-6 col-12">
                         <h5 class="text-center">
@@ -58,19 +54,19 @@
                         <div class="row pt-2"></div>
                         <div class="row pt-2">
                             <div class="col-4">
-                                <p class="text-md mb-2">Hotel Name :</p>
+                                <p class="text-md mb-2">Hotel Room Type :</p>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="from-control" [(ngModel)]="_nameHo" pInputText disabled
+                                <input type="text" class="from-control" [(ngModel)]="_typeHo" pInputText disabled
                                     size="30">
                             </div>
                         </div>
                         <div class="row pt-2">
                             <div class="col-4">
-                                <p class="text-md mb-2">Hotel Address :</p>
+                                <p class="text-md mb-2">Hotel Zone :</p>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="from-control" [(ngModel)]="_address" pInputText disabled
+                                <input type="text" class="from-control" [(ngModel)]="_zoneHo" pInputText disabled
                                     size="30">
                             </div>
                         </div>
@@ -167,8 +163,8 @@
                 </div>
 
                 <div class="row pt-3">
-                    <button pButton pRipple type="button" label="Confirm Booking" class="p-button-rounded p-button-primary"
-                        data-bs-toggle="modal" data-bs-target="#confirmModal"
+                    <button pButton pRipple type="button" label="Confirm Booking"
+                        class="p-button-rounded p-button-primary" data-bs-toggle="modal" data-bs-target="#confirmModal"
                         [disabled]="!_uName||!_email||!_tel||!_dayIn||!_dayOut||!_priceAll"></button>
                     <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel"
                         aria-hidden="true">

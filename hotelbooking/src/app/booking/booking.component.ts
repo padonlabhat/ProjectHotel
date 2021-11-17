@@ -11,36 +11,33 @@ import { CrudService } from '../service/crud.service';
 
 export class BookingComponent implements OnInit {
 
-  public idName!: number;
   public idTest!: number;
   public idHotel!: number;
 
   public _id!: number;
-  public _tel!: string;
-  public _dayNumb!: number;
-  public _dayIn!: string;
-  public _dayOut!: string;
-  public _priceAll!: number;
-
   public _uName!: string;
   public _email!: string;
+  public _tel!: string;
 
-  public _nameHo!: string;
-  public _address!: string;
+  public _typeHo!: string; //Hotel Room Type
+  public _zoneHo!: string; //Hotel Zone
   public _price!: number;
   public _telHo!: string;
 
-  public _bookingList!: Booking[];
-  public _user!: User[];
-  public _room!: Room[];
+  public _dayIn!: string;
+  public _dayOut!: string;
+  public _dayNumb!: number;
+  public _priceAll!: number;
 
-  constructor(private db: AngularFireDatabase,private cruservice :CrudService) {
+  public _bookingList!: Booking[];
+  public _roomList!: Room[];
+
+  constructor(private db: AngularFireDatabase, private cruservice: CrudService) {
     //  this.db.object('booking/0').set({id : 0,tel : '0905555555',dayNumb : 10 ,priceAll : 5000, nameU : 'Customer1', email : 'emailcus1@email.com', nameHo : 'Hotel1',telHo : '0361111111'  })
     this.getStartedBooking();
-    this.getStartedUser();
     this.getStartedHotel();
   }
-  
+
   async getStartedBooking() {
     var booking: Booking[];
     await this.getBookingFromRealtimeDB().then(value => {
@@ -57,40 +54,22 @@ export class BookingComponent implements OnInit {
       })
     });
   }
-  items = this.cruservice.getItems();
-  async getStartedUser() {
-    var user: User[];
-    await this.getUserFromRealtimeDB().then(value => {
-      user = value as User[];
-      this._user = user;
-    });
-    // console.log(this._user)
-    // this.idTest = 4;
-    // this.idName = this.idTest;
-    // this._uName = this._user[this.idName].firstname + " " + this._user[this.idName].lastname
-    // this._email = this._user[this.idName].email
-  }
-  getUserFromRealtimeDB() {
-    return new Promise((resolve, reject) => {
-      this.db.list('login').valueChanges().subscribe(value => {
-        resolve(value);
-      })
-    });
-  }
+
+  // items = this.cruservice.getItems();
 
   async getStartedHotel() {
     var room: Room[];
     await this.getHotelFromRealtimeDB().then(value => {
       room = value as Room[];
-      this._room = room;
+      this._roomList = room;
     });
     // console.log(this._room)
-    this.idTest = 0;
+    this.idTest = 1;
     this.idHotel = this.idTest;
-    this._nameHo = this._room[this.idHotel].name
-    this._address = this._room[this.idHotel].address
-    this._telHo = this._room[this.idHotel].phone
-    this._price = this._room[this.idHotel].price
+    this._typeHo = this._roomList[this.idHotel].name
+    this._zoneHo = this._roomList[this.idHotel].address
+    this._telHo = this._roomList[this.idHotel].phone
+    this._price = this._roomList[this.idHotel].price
   }
   getHotelFromRealtimeDB() {
     return new Promise((resolve, reject) => {
@@ -112,15 +91,16 @@ export class BookingComponent implements OnInit {
   async addBooking() {
     var data = {
       id: this._id,
-      tel: this._tel,
-      dayNumb: this._dayNumb,
+      nameU: this._uName,   //Name Customer
+      email: this._email,   //Email Customer
+      tel: this._tel,       //Customer Tel
       dayIn: this._dayIn,
       dayOut: this._dayOut,
+      dayNumb: this._dayNumb,
       priceAll: this._priceAll,
-      nameU: this._uName,
-      email: this._email,
-      nameHo: this._nameHo,
-      telHo: this._telHo
+      nameHo: this._typeHo, //Hotel Room Type
+      zoneHo: this._zoneHo, //Hotel Zone
+      telHo: this._telHo    //Hotel Tel
     }
     await this.db.object('booking/' + (String(this._id))).set(data);
     await this.getStartedBooking();
@@ -137,14 +117,8 @@ class Booking {
   nameU!: string;
   email!: string;
   nameHo!: string;
+  zoneHo!: string;
   telHo!: string;
-}
-
-class User {
-  firstname!: string;
-  lastname!: string;
-  email!: string;
-  uid!: number;
 }
 
 class Room {
