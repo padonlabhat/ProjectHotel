@@ -10,7 +10,7 @@ export class BookinghistoryComponent implements OnInit {
   public _bookinghistoryList!: Bookinghistory[];
 
   constructor(private db : AngularFireDatabase) { 
-    this.db.object('booking/0').set({id : '1',name : 'namehotel'})
+   // this.db.object('booking/0').set({id : '1',name : 'namehotel'})
     this.getStarted();
   }
 
