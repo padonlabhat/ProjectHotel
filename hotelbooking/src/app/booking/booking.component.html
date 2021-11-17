@@ -41,8 +41,8 @@
                                 <p class="text-md mb-2">Telephone Number :</p>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="from-control" [(ngModel)]="_tel" pInputText maxlength="10"
-                                    size="30">
+                                <input type="text" class="from-control" [(ngModel)]="_tel" pInputText minlength="9"
+                                    maxlength="10" size="30" min="0">
                             </div>
                         </div>
                     </div>
@@ -164,6 +164,13 @@
                 <div class="row pt-3">
                     <button pButton pRipple type="button" label="Confirm Booking"
                         class="p-button-rounded p-button-primary" data-bs-toggle="modal" data-bs-target="#confirmModal"
+                        [disabled]="!_uName||!_email||!_tel||!_dayIn||!_dayOut||!_priceAll"
+                        (click)="addBooking()"></button>
+                </div>
+
+                <!-- <div class="row pt-3">
+                    <button pButton pRipple type="button" label="Confirm Booking"
+                        class="p-button-rounded p-button-primary" data-bs-toggle="modal" data-bs-target="#confirmModal"
                         [disabled]="!_uName||!_email||!_tel||!_dayIn||!_dayOut||!_priceAll"></button>
                     <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel"
                         aria-hidden="true">
@@ -186,7 +193,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
             </div>
         </div>
     </div>

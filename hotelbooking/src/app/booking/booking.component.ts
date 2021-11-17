@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { CrudService } from '../service/crud.service';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
@@ -32,7 +33,7 @@ export class BookingComponent implements OnInit {
   public _bookingList!: Booking[];
   public _roomList!: Room[];
 
-  constructor(private db: AngularFireDatabase, private cruservice: CrudService) {
+  constructor(private db: AngularFireDatabase, private router: Router, private route: ActivatedRoute) {
     //  this.db.object('booking/0').set({id : 0,tel : '0905555555',dayNumb : 10 ,priceAll : 5000, nameU : 'Customer1', email : 'emailcus1@email.com', nameHo : 'Hotel1',telHo : '0361111111'  })
     this.getStartedBooking();
     this.getStartedHotel();
@@ -101,6 +102,7 @@ export class BookingComponent implements OnInit {
     }
     await this.db.object('booking/' + (String(this._id))).set(data);
     await this.getStartedBooking();
+    this.router.navigateByUrl('payment');
   }
 
   ngOnInit() {
