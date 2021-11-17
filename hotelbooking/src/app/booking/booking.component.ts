@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-
+import { CrudService } from '../service/crud.service';
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
@@ -34,13 +34,13 @@ export class BookingComponent implements OnInit {
   public _user!: User[];
   public _room!: Room[];
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase,private cruservice :CrudService) {
     //  this.db.object('booking/0').set({id : 0,tel : '0905555555',dayNumb : 10 ,priceAll : 5000, nameU : 'Customer1', email : 'emailcus1@email.com', nameHo : 'Hotel1',telHo : '0361111111'  })
     this.getStartedBooking();
     this.getStartedUser();
     this.getStartedHotel();
   }
-
+  
   async getStartedBooking() {
     var booking: Booking[];
     await this.getBookingFromRealtimeDB().then(value => {
@@ -57,7 +57,7 @@ export class BookingComponent implements OnInit {
       })
     });
   }
-
+  items = this.cruservice.getItems();
   async getStartedUser() {
     var user: User[];
     await this.getUserFromRealtimeDB().then(value => {
@@ -85,7 +85,7 @@ export class BookingComponent implements OnInit {
       this._room = room;
     });
     // console.log(this._room)
-    this.idTest = 4;
+    this.idTest = 0;
     this.idHotel = this.idTest;
     this._nameHo = this._room[this.idHotel].name
     this._address = this._room[this.idHotel].address

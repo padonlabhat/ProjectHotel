@@ -23,30 +23,8 @@ export class CrudService {
     this.items = [];
     return this.items;
   }
-  getShippingPrices() {
-    return this.http.get<{type: string, price: number}[]>('/assets/shipping.json');
-  }
 
 
 
-}
-export interface search {
-  roomN: string;
-  roomID: string;
-  price: number;
-  description: string;
-  _id: string;
-  _name: string;
-  _price: number;
-  _address: string;
-  _sizeroom: number;
-  _totalroom: number;
-  _gmail: string;
-  _phone: number;
-  _WiFi: any;
-  _freebf: any;
-  _air: any;
-  _pet: any;
-  _parking: any;
-  _pool: any;
+
 }

@@ -6,7 +6,17 @@
                 <div class="col-12">
                     <h2 class="text-center">Customer information and Booking details</h2><br>
                 </div>
+<!-- // -->
 
+  
+<div *ngFor="let item of items">
+    <span>{{ item._id }} </span>
+    <span>{{ item._name}}</span>
+    <span> {{ item._price}}</span>
+  </div>
+  
+
+<!-- // -->
                 <div class="row pt-3">
                     <div class="col-md-6 col-12">
                         <h5 class="text-center">

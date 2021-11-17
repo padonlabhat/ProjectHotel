@@ -35,9 +35,11 @@
                           </div>
                           <h5 class="mb-1"> Address: {{search.address}}</h5>
                           <h5 class="mb-1"> Phone : {{search.phone}}</h5>
-                          <h5 class="mb-1"> roomsize : {{search.sizeroom}}</h5>
+                          <h5 class="mb-1"> sizeroom : {{search.sizeroom}}</h5>
                           <h5 class="mb-1"> totalroom : {{search.totalroom}}</h5>
-                          <div class="text-center"><a class="btn btn-primary" (click)="addToCart(search)">choose</a>
+                          <div class="text-center">
+                            <a class="btn btn-primary" (click)="addToCart(search)" routerLink="booking">choose</a>
+                            
                           </div>
                         </div>
                       </div>
