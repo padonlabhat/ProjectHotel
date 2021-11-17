@@ -81,11 +81,8 @@ export class BookingComponent implements OnInit {
 
   async calculator() {
     var diff = Date.parse(this._dayOut) - Date.parse(this._dayIn);
-    this._dayNumb = Math.floor(diff / 86400000);
+    this._dayNumb = (diff / 86400000);
     this._priceAll = this._price * this._dayNumb;
-  }
-
-  ngOnInit() {
   }
 
   async addBooking() {
@@ -105,6 +102,10 @@ export class BookingComponent implements OnInit {
     await this.db.object('booking/' + (String(this._id))).set(data);
     await this.getStartedBooking();
   }
+
+  ngOnInit() {
+  }
+
 }
 
 class Booking {
