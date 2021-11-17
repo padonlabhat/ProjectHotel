@@ -5,9 +5,7 @@ import {MessageService} from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
 
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { Observable, ReplaySubject } from 'rxjs';
-
-import {CrudService} from '../service/crud.service';
+import {Router } from '@angular/router';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -41,12 +39,24 @@ export class PaymentComponent implements OnInit {
       if (this.Check != true) {
         console.log('failed');
         this.showError();
-      }else{this.showSuccess();}
+        this.clearFields();
+        
+        
+      }else{this.showSuccess();
+        this.clearFields();
+        this.router.navigateByUrl('home');
+      }
     }
   }
 
 
-  constructor(private db : AngularFireDatabase,private messageService: MessageService, private primengConfig: PrimeNGConfig) { 
+  constructor(
+    private db : AngularFireDatabase,
+    private messageService: MessageService, 
+    private primengConfig: PrimeNGConfig,
+    private router: Router,
+   
+    ) { 
  //this.db.object('payment/1').set({order : '100000',name : 'game',number : '033215454554668',expiry :  '0425',cvv : '425'})
   
  this.getStarted();
@@ -88,7 +98,9 @@ export class PaymentComponent implements OnInit {
  
 clearFields(){
     this._name = '';
-
+    this._number= '';
+    this._expiry= '';
+    this._cvv= '';
   }
 
 
