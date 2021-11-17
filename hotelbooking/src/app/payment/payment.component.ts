@@ -31,7 +31,8 @@ export class PaymentComponent implements OnInit {
             cvv: this._cvv
       }
       for (let i = 0; i < this._paymentList.length; i++) {
-        if (data.name == this._paymentList[i].name && data.number == this._paymentList[i].number&& data.expiry == this._paymentList[i].expiry&& data.cvv == this._paymentList[i].cvv) {
+        if (data.name == this._paymentList[i].name && data.number == this._paymentList[i].number&& data.expiry ==
+           this._paymentList[i].expiry&& data.cvv == this._paymentList[i].cvv) {
           console.log('suscess');
           this.Check = true;
         }
@@ -44,7 +45,7 @@ export class PaymentComponent implements OnInit {
         
       }else{this.showSuccess();
         this.clearFields();
-        this.router.navigateByUrl('home');
+      
       }
     }
   }
@@ -111,10 +112,10 @@ clearFields(){
   }
 
 showSuccess() {
-    this.messageService.add({key: 'bc',severity:'success', summary: 'Success', detail: 'Message Content'});
+    this.messageService.add({key: 'bc',severity:'success', summary: 'Success', detail: 'Success Content'});
 }
 showError() {
-  this.messageService.add({key: 'bc',severity:'error', summary: 'Error', detail: 'Message Content'});
+  this.messageService.add({key: 'bc',severity:'error', summary: 'Error', detail: 'Error Content'});
 }
 onConfirm() {
   this.messageService.clear('c');
