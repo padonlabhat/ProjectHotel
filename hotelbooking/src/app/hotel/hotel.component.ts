@@ -31,7 +31,7 @@ export class HotelComponent implements OnInit {
   public _sizeroom!: number;
   public _totalroom!: number;
   public _roomList!: Room[];
-  // public _address!: string;
+   public _address!: string;
  // public _gmail! : string;
  // public _phone! : number;
   //public _WiFi! : any;
@@ -46,7 +46,7 @@ export class HotelComponent implements OnInit {
 
   
   constructor(private db : AngularFireDatabase) { 
-    this.db.object('room/0').set({id : '1',name : 'namehotel'})
+    //this.db.object('room/0').set({id : '1',name : 'namehotel'})
    
     this.getStarted();
     }
@@ -77,7 +77,7 @@ export class HotelComponent implements OnInit {
        price:this._price,
        sizeroom: this._sizeroom,
        totalroom: this._totalroom,
-       //   address: this._address,
+       address: this._address,
     //   gmail :this._gmail,
     //   phone : this._phone,
       //  WiFi : this._WiFi,
@@ -107,7 +107,7 @@ class Room {
   id!:string;
   name!: string;
   price!: number;
-  //address!: string;
+  address!: string;
   sizeroom!: number;
   totalroom!: number;
   //gmail! : string;

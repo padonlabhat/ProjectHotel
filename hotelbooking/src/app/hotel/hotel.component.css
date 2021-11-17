@@ -2,7 +2,7 @@
 .card {
     padding: 30px 25px 35px 50px;
     border-radius: 30px;
-    box-shadow: 0px 4px 8px 0px #0d6efd;
+    box-shadow: 0px 4px 8px 0px #000000;
     margin-top: 25px;
     margin-bottom: 25px
 }
@@ -43,7 +43,7 @@ input:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border-bottom: 1px solid #0d6efd;
+    border-bottom: 1px solid #000000;
     outline-width: 0
 }
 
@@ -56,7 +56,7 @@ button:focus {
 
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #0d6efd
+    background-color: #000000
 }
 
 @media screen and (max-width: 575px) {
