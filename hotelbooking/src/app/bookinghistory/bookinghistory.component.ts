@@ -43,5 +43,7 @@ class Bookinghistory {
   nameU!: string;
   email!: string;
   nameHo!: string;  
-  telHo!: string;
+  dayIn!: string;
+  dayOut!: string;
+  zoneHo!: string;
 }

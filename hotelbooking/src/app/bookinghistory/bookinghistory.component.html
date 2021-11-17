@@ -1,8 +1,8 @@
 <app-headerhotel></app-headerhotel>
 <html lang="en">
     <div class="container">
-        <div class="col-12">
-            <h2  class="text-center">ประวัติการจอง</h2> 
+        <div class="col-12 pt-5">
+            <h2  class="text-center">My Order</h2> 
         </div>
         <div class="col">
             <div class="card">
@@ -14,10 +14,11 @@
                             <th scope="col">Name</th>
                             <th scope="col">Telephone Number</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Number of Days</th>
+                            <th scope="col">Check-In</th>
+                            <th scope="col">Check-Out</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Hotel Name</th>
-                            <th scope="col">Hotel Number</th>
+                            <th scope="col">Hotel Room Type</th>
+                            <th scope="col">Hotel Zone</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,10 +27,11 @@
                             <td>{{booking.nameU}}</td>
                             <td>{{booking.tel}}</td>
                             <td>{{booking.email}}</td>
-                            <td>{{booking.dayNumb}}</td>
+                            <td>{{booking.dayIn}}</td>
+                            <td>{{booking.dayOut}}</td>
                             <td>{{booking.priceAll}}</td>
-                            <td>{{booking.nameHo}}</td>
-                            <td>{{booking.telHo}}</td>
+                            <td align = 'center'>{{booking.nameHo}}</td>
+                            <td align = 'center'>{{booking.zoneHo}}</td>
                         </tr>
                     </tbody>
                 </table>
