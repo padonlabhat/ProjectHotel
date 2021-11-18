@@ -48,7 +48,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './footer/footer.component';//hotel
 
 import {GMapModule} from 'primeng/gmap'; //hotel
-
+import {ChartModule} from 'primeng/chart';
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,7 +92,8 @@ import {GMapModule} from 'primeng/gmap'; //hotel
     ToastModule,
     ConfirmDialogModule,
     InputNumberModule,
-    GMapModule
+    GMapModule,
+    ChartModule
    
 
   ],
