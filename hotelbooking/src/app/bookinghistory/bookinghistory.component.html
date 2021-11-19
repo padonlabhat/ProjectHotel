@@ -1,0 +1,41 @@
+
+<html lang="en">
+    <div class="container">
+        <div class="col-12 pt-5">
+            <h2  class="text-center">My Order</h2> 
+        </div>
+        <div class="col">
+            <div class="card">
+                <h3>My Room</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Telephone Number</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Check-In</th>
+                            <th scope="col">Check-Out</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Hotel Room Type</th>
+                            <th scope="col">Hotel Zone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let booking of _bookinghistoryList; let i = index;'>
+                            <td>{{i+1}}</td>
+                            <td>{{booking.nameU}}</td>
+                            <td>{{booking.tel}}</td>
+                            <td>{{booking.email}}</td>
+                            <td>{{booking.dayIn}}</td>
+                            <td>{{booking.dayOut}}</td>
+                            <td>{{booking.priceAll}}</td>
+                            <td align = 'center'>{{booking.nameHo}}</td>
+                            <td align = 'center'>{{booking.zoneHo}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+</html>

@@ -1,0 +1,201 @@
+<app-header></app-header>
+<div class="container-fluid  py-1">
+    <div class="row d-flex justify-content-center ">
+        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-11 ">
+            <div class="card border-0">
+                <div class="col-12">
+                    <h2 class="text-center">Customer information and Booking details</h2><br>
+                </div>
+
+                <!-- <div *ngFor="let item of items">
+                    <span>{{ item._id }} </span>
+                    <span>{{ item._name}}</span>
+                    <span> {{ item._price}}</span>
+                </div> -->
+
+                <div class="row pt-3">
+                    <div class="col-md-6 col-12">
+                        <h5 class="text-center">
+                            Customer Parts
+                        </h5>
+                        <div class="row pt-2"></div>
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <p class="text-md mb-2">Name - Surname : </p>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="from-control" [(ngModel)]="_uName" pInputText size="30">
+                            </div>
+                        </div>
+
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <p class="text-md mb-2">E-mail :</p>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="from-control" [(ngModel)]="_email" pInputText size="30">
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <p class="text-md mb-2">Telephone Number :</p>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="from-control" [(ngModel)]="_tel" pInputText minlength="9"
+                                    maxlength="10" size="30" min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                        <h5 class="text-center">
+                            Hotel Parts
+                        </h5>
+                        <div class="row pt-2"></div>
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <p class="text-md mb-2">Hotel Room Type :</p>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="from-control" [(ngModel)]="_typeHo" pInputText disabled
+                                    size="30">
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <p class="text-md mb-2">Hotel Zone :</p>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="from-control" [(ngModel)]="_zoneHo" pInputText disabled
+                                    size="30">
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <p class="text-md mb-2">Hotel Tel. :</p>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="from-control" [(ngModel)]="_telHo" pInputText disabled
+                                    size="30">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row pt-3">
+                    <div class="col-md-6 col-12">
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <p class="text-md mb-2">Check-In Date :</p>
+                            </div>
+                            <div class="col-8">
+                                <input type="date" class="from-control" [(ngModel)]="_dayIn" pInputText>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <p class="text-md mb-2">Check-Out Date :</p>
+                            </div>
+                            <div class="col-8">
+                                <input type="date" class="from-control" [(ngModel)]="_dayOut" pInputText>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div align="center">
+                                <button pButton pRipple type="button" (click)="calculator()"
+                                    [disabled]="!_dayIn||!_dayOut" label="Confirm Date"
+                                    class="p-button-rounded"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <p class="text-md mb-2">Price per Night :</p>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="from-control" style="text-align:center" [(ngModel)]="_price"
+                                    pInputText disabled>
+                            </div>
+                            <div class="col-2">
+                                <p class="text-md mb-2">Bath</p>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <p class="text-md mb-2">Number of Day :</p>
+                            </div>
+                            <div class="col-4">
+                                <input type="number" class="from-control" style="text-align:center"
+                                    [(ngModel)]="_dayNumb" pInputText disabled>
+                            </div>
+                            <div class="col-2">
+                                <p class="text-md mb-2">Night</p>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <p class="text-md mb-2">Total Price :</p>
+                            </div>
+                            <div class="col-4">
+                                <input type="number" class="from-control" style="text-align:center"
+                                    [(ngModel)]="_priceAll" pInputText disabled>
+                            </div>
+                            <div class="col-2">
+                                <p class="text-md mb-2">Bath</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row footer p-5">
+                    <div class="col-12">
+                        <h4 class="text-center">
+                            Please make payment on the next page. To confirm your booking.
+                        </h4>
+                        <div class="row pt-2"></div>
+                        <div align="center">
+                            <img src="assets/img/hotel2.jfif" width="500" height="450" class="img-fluid  rounded" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row pt-3">
+                    <button pButton pRipple type="button" label="Confirm Booking"
+                        class="p-button-rounded p-button-primary" data-bs-toggle="modal" data-bs-target="#confirmModal"
+                        [disabled]="!_uName||!_email||!_tel||!_dayIn||!_dayOut||!_priceAll"
+                        (click)="addBooking()"></button>
+                </div>
+
+                <!-- <div class="row pt-3">
+                    <button pButton pRipple type="button" label="Confirm Booking"
+                        class="p-button-rounded p-button-primary" data-bs-toggle="modal" data-bs-target="#confirmModal"
+                        [disabled]="!_uName||!_email||!_tel||!_dayIn||!_dayOut||!_priceAll"></button>
+                    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="confirmModalLabel">Payment</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Confirm your Booking Information?
+                                </div>
+                                <div class="modal-footer">
+                                    <a type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                        aria-label="Close">Continue Editing </a>
+                                    <a type="button" class="btn btn-primary" (click)="addBooking()"
+                                        href="payment">Confirm Information</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,136 @@
+.bt{
+    
+    border: 1px stroke blue;
+    border-color: primary;
+}
+
+
+.container {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    color: #405065;
+  }
+  
+  .search-hero {
+    max-width: 500px;
+    padding-bottom: 50px;
+    margin:auto;
+  }
+  
+  .form-control {
+    box-shadow: 0 10px 40px 0 #4871f8;
+  }
+  .form-control::placeholder  {
+    font-family: FontAwesome;
+  }
+
+  input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-size: 14px;
+    box-sizing: border-box;
+    }
+    textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-size: 14px;
+    box-sizing: border-box;
+    }
+    button{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    color: #000000;
+    font-size: 14px;
+    box-sizing: border-box;
+    }
+
+    
+    .imgs { 
+      text-align: center;
+      } .banner-image { 
+      display: inline-block; 
+      }
+
+
+
+      
+.card {
+  padding: 30px 25px 35px 50px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 8px 0px #0d6efd;
+  margin-top: 50px;
+  margin-bottom: 50px
+}
+
+.border-line {
+  border-right: 1px solid #BDBDBD
+}
+
+.text-sm {
+  font-size: 13px
+}
+
+.text-md {
+  font-size: 18px
+}
+
+.image {
+  width: 60px;
+  height: 30px
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1
+}
+
+:-ms-input-placeholder {
+  color: grey
+}
+
+::-ms-input-placeholder {
+  color: grey
+}
+
+input {
+  padding: 2px 0px;
+  border: none;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 5px;
+  margin-top: 2px;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 500
+}
+
+input:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #0d6efd;
+  outline-width: 0
+}
+
+button:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline-width: 0
+}
+
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+  background-color: #0d6efd
+}
+
+@media screen and (max-width: 575px) {
+  .border-line {
+      border-right: none;
+      border-bottom: 1px solid #EEEEEE
+  }
+}

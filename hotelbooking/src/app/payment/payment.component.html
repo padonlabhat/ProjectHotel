@@ -1,0 +1,99 @@
+<app-header></app-header>
+<div class="container-fluid  py-5">
+    <div class="row d-flex justify-content-center ">
+        <div class="col-xl-6 col-lg-6col-md-9 col-sm-12 ">
+            <div class="card border-0">
+                <div class="row">
+                        <div class="col">
+                        <h3 class="mb-4">Credit Card Checkout</h3>
+                        </div>
+                
+                      
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 border-line pb-3">
+                        <div class="form-group">
+                            
+                                <span class="p-float-label">
+                                <input type="text" id="namecard" pInputText [(ngModel)]="_name"> 
+                                <label for="inputtext">Name on the card</label>
+                            </span>
+                     
+                        </div>
+
+                        <div class="form-group">
+                            <p class="text-muted text-sm mb-0 pt-2">Card Number</p>
+                            <div class="row"> 
+                            <div class="col">
+                                <p-inputMask mask="9999 9999 9999 9999" [(ngModel)]="_number"  placeholder="0000 0000 0000 0000"></p-inputMask>
+                              
+    
+                           /<img class="image ml-1" src="https://i.imgur.com/WIAP9Ku.jpg">
+                            </div>
+                        
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted text-sm mb-0 pt-2">Expiry date</p> 
+                              <p-inputMask mask="99/99" [(ngModel)]="_expiry"  placeholder="MM/YY" ></p-inputMask>
+                
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted text-sm mb-0 pt-2">CVV/CVC</p> 
+                            <p-inputMask mask="999" [(ngModel)]="_cvv"  placeholder="000"   ></p-inputMask>
+            
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-6 text-sm-center justify-content-center pb-4"> 
+                   
+                    <small class="text-sm text-muted"></small>
+                    <div class="p-grid p-fluid pt-5">
+                    
+    
+   
+                        <small class="text-sm text-muted ">WONGWEAN SRAKEAW HOTEL</small>
+                        <div class="row px-3 justify-content-sm-center">
+                              
+                          
+                             <button pButton pRipple type="button"  (click)='submitpayment()' [disabled]="!_name||!_number||!_expiry||!_cvv" label="PAY" class="p-button-rounded mt-2"></button>
+
+                            
+                            <p-toast></p-toast>
+                            <p-toast position="top-left" key="tl"></p-toast>
+                            <p-toast position="top-center" key="tc"></p-toast>
+                            <p-toast position="bottom-center" key="bc"></p-toast>
+
+                            <p-toast position="bottom-center" key="c" (onClose)="onReject()" [baseZIndex]="5000">
+                                <ng-template let-message pTemplate="message">
+                                    <div class="p-flex p-flex-column" style="flex: 1">
+                                        <div class="p-text-center">
+                                            <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
+                                            <h4>{{message.summary}}</h4>
+                                            <p>{{message.detail}}</p>
+                                        </div>
+                                        <div class="p-grid p-fluid">
+                                            <div class="p-col-6">
+                                                <button type="button" pButton (click)="onConfirm()" label="Yes" class="p-button-success"></button>
+                                            </div>
+                                            <div class="p-col-6">
+                                                <button type="button" pButton (click)="onReject()" label="No" class="p-button-secondary"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-toast>
+                        </div>
+                       
+                    </div>
+                       
+
+    
+    
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

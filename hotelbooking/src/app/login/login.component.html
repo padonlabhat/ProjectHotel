@@ -1,0 +1,55 @@
+<div class="container pt-5" align="center"
+    style="background-image: url('../../assets/img/login.jpg'); width: 1600px; height: 700px;">
+    <div class="card py-3 my-5" style="width: 500px;" align="left">
+        <div class="card-body">
+            <div class="row">
+                <h6 class="text-center"><b>Log in</b></h6>
+            </div>
+            <div class="form-group">
+                <div class="row py-2">
+                    <div class="col-1 py-1">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-11">
+                        <input type="text" class="form-control" placeholder="USERNAME OR E-MAIL" [(ngModel)]="username"
+                            maxlength="20">
+                    </div>
+                </div>
+
+                <div class="row py-2">
+                    <div class="col-1 py-1">
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-11">
+                        <input type="password" class="form-control" placeholder="PASSWORD" [(ngModel)]="password"
+                            maxlength="20">
+                    </div>
+                </div>
+                <br>
+                <div class="row py-2" align="center">
+                    <div class="col">
+                        <button pButton pRipple type="button" class="p-button-rounded p-button-primary"
+                            (click)="onLogin()" label="LOGIN"></button>
+                    </div>
+                </div>
+
+                <div class="row" align="center">
+                    <div class="col">
+                        <a href="register">or, Register</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<p-confirmDialog #cd [style]="{width: '50vw'}">
+    <ng-template pTemplate="header">
+        <h3>Warning</h3>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <!-- <button type="button" pButton icon="pi pi-times" label="No" (click)="cd.reject()"></button> -->
+        <button type="button" pButton icon="pi pi-check" label="OK" (click)="cd.accept()"></button>
+    </ng-template>
+</p-confirmDialog>

@@ -1,0 +1,56 @@
+<app-header></app-header><br />
+<div class="container-fluid  py-1">
+  <div class="row d-flex justify-content-center ">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-11 ">
+      <div class="card border-0">
+        <div class="col-12">
+          <div class="container">
+            <div class="row">
+              <div class="search-hero">
+                <input class="form-control" type="text" [(ngModel)]="term" name="search" autocomplete="off"
+                  placeholder="&#61442;  Search by Room Name,Price,Description">
+              </div>
+            </div>
+           
+            <br />
+            <hr>
+            <div class="container">
+              <div class="row">
+
+                <div class="col-sm">
+                  <div col-4>
+                    <li class="list-group-item active">Hotel</li>
+                    <a class="list-group-item list-group-item-action list-group-item-light"
+                      *ngFor="let search of search | filter : term ">
+                      <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                        {{search.price}} Bath
+                      </div>
+                      <div align="center">
+                        <img src="assets/img/room9.jpg" width="500" height="450" class="img-fluid  rounded" />
+                      </div>
+                      <div class="card-body p-4">
+                        <div class="list-group">
+                          <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Name: {{search.name}}</h5>
+                          </div>
+                          <h5 class="mb-1"> Address: {{search.address}}</h5>
+                          <h5 class="mb-1"> Phone : {{search.phone}}</h5>
+                          <h5 class="mb-1"> sizeroom : {{search.sizeroom}}</h5>
+                          <h5 class="mb-1"> totalroom : {{search.totalroom}}</h5>
+                          <div class="text-center">
+                            <a class="btn btn-primary" (click)="addToCart(search)" routerLink="booking">choose</a>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

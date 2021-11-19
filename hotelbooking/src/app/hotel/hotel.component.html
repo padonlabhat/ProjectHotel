@@ -1,0 +1,114 @@
+<app-headerhotel></app-headerhotel>
+<div class="container pt-4">
+
+   
+   
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <h3>Add Room</h3>
+                
+                    
+                <div class="row">
+               
+                                <div class="p-field p-col-12 pt-4">
+                                        <span class="p-float-label">
+                                            <input type="text" id="inputtext" pInputText size="57" [(ngModel)]='_name' > 
+                                            <label for="inputtext">Room Type</label>
+                                        </span>
+                              </div>
+
+                                <div class="p-field p-col-12 pt-4">
+                                        <span class="p-float-label">
+                                            <input type="text" id="inputtext" pInputText size="57" [(ngModel)]='_address' > 
+                                            <label for="inputtext">zone</label>
+                                        </span>
+                                        </div>
+                                        
+                                
+                                        
+                </div>
+                <div class = "row">
+                                 <div class="col">
+                                    <div class="p-col-12 pt-2">
+                                            <div class="p-inputgroup">
+                                                <span class="p-inputgroup-addon">฿</span>
+                                                <input type="text-center"  pInputText placeholder="Price" [(ngModel)]='_price' >   
+                                                <span class="p-inputgroup-addon">.00</span>      
+                                            </div>
+                                        </div>
+
+                                      
+                    </div>
+                   
+            <div class ='row pt-2 '> 
+                  <div class="col">
+                                                    <div class="p-field p-col-12">
+                                            
+                                                            <div class="p-field p-col-10 p-md-1">
+                                                                <label for="minmax-buttons">size room</label>
+                                                                <p-inputNumber mode="decimal"[(ngModel)]='_sizeroom' [showButtons]="true" inputId="minmax-buttons" [min]="25" [max]="100" spinnerMode="horizontal" [step]="0.50">
+                                                                </p-inputNumber>
+                                                            </div>
+                                                    </div>
+                </div>
+                <div class="col">
+                            <div class="p-field p-col-10 p-md-1">
+                                <label for="minmax-buttons">total room</label>
+                                <p-inputNumber mode="decimal"[(ngModel)]='_totalroom'[showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100">
+                                </p-inputNumber>
+                            </div>
+                            
+                </div>
+                </div>
+                <button pButton pRipple type="button" (click)="addroom()"  label="ADD" class="p-button-rounded mt-3"></button>
+            </div>  
+
+             
+                         
+            </div>  
+                               
+      
+                    
+           
+        </div>
+
+<div class="col">
+            <div class="card">
+                <h3>My Room</h3>
+                     <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>           
+                                <th scope="col">type</th>
+                                <th scope="col">zone</th>  
+                                <th scope="col">price</th>                               
+                                <th scope="col">sizeroom</th>
+                                <th scope="col">totalroom</th>
+                               
+                              
+                                </tr>
+                            </thead>
+                            <tbody>
+                            
+                                <tr *ngFor='let room of _roomList; let i = index;'>
+                                    <td>{{i+1}}</td>                             
+                                    <td>{{room.name}}</td>
+                                    <td>{{room.address}}</td> 
+                                    <td>{{room.price}}</td>                                   
+                                    <td>{{room.sizeroom}}</td>
+                                    <td>{{room.totalroom}}</td>
+                                    
+                                    
+                                </tr>
+                            </tbody>
+                            </table>
+            </div>
+        </div>
+
+
+    </div>
+         
+                
+    </div>
+ 
