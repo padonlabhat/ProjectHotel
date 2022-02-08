@@ -1,0 +1,5 @@
+จำเป็นต้องใช้ 
+npm install
+npm install -g @angular/cli
+npm install firebase @Angular/fire
+-------------------------------------
