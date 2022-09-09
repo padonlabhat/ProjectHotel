@@ -67,7 +67,7 @@ import {ChartModule} from 'primeng/chart';
     HeaderhotelComponent,
     DashboardComponent,
     FooterComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -83,7 +83,6 @@ import {ChartModule} from 'primeng/chart';
     ReactiveFormsModule,
     OrderListModule,
     InputTextModule,
-    AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     Ng2SearchPipeModule,
     AngularFirestoreModule,
@@ -93,8 +92,9 @@ import {ChartModule} from 'primeng/chart';
     ConfirmDialogModule,
     InputNumberModule,
     GMapModule,
-    ChartModule
-   
+    ChartModule,
+    AngularFireModule.initializeApp(environment.firebase),
+
 
   ],
   providers: [CrudService],
