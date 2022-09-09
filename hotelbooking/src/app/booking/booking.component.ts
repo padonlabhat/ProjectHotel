@@ -65,7 +65,7 @@ export class BookingComponent implements OnInit {
       this._roomList = room;
     });
     // console.log(this._room)
-    this.idTest = 1;
+    this.idTest = 0;
     this.idHotel = this.idTest;
     this._typeHo = this._roomList[this.idHotel].name
     this._zoneHo = this._roomList[this.idHotel].address
